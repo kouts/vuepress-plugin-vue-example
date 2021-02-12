@@ -1,0 +1,34 @@
+{
+  "name": "vuepress-plugin-vue-example",
+  "description": "A vuepress plugin to display Vue components' example code",
+  "version": "0.0.1",
+  "author": "Giannis Koutsaftakis",
+  "license": "MIT",
+  "repository": "https://github.com/kouts/vuepress-plugin-vue-example",
+  "keywords": [
+    "vuepress",
+    "code",
+    "example",
+    "vue",
+    "demo",
+    "demo-code",
+    "documentation"
+  ],
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "eslint-plugin-vue": "^6.2.2"
+  }
+}
