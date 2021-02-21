@@ -1,5 +1,8 @@
 <template>
-  <div class="card mb-4">
+  <div v-if="!component && showLoader" class="card overflow-hidden">
+    <div class="loader">Loading...</div>
+  </div>
+  <div v-else class="card">
     <div v-if="sections.length" class="card-header d-flex bg-white justify-content-between">
       <ul class="nav nav-pills">
         <li class="nav-item" @click.prevent="sectionSelected = sections[0].name">
@@ -86,7 +89,11 @@ export default {
     showIcons: {
       type: Boolean,
       default: true
-    }    
+    },
+    showLoader: {
+      type: Boolean,
+      default: false
+    }
   },
   data () {
     return {
@@ -101,7 +108,9 @@ export default {
   },
   methods: {
     createComponent () {
-      loadComponent(this.$props.file).then(component => { this.component = component; });
+      loadComponent(this.$props.file).then(component => { 
+        this.component = component;
+      });
     },
     createSections () {
       loadComponentAsString(this.$props.file).then(contents => {
@@ -147,6 +156,7 @@ export default {
 <style lang="scss" scoped>
 $primary-color: #3eaf7c;
 $white-color: #fff;
+$black-color: #000;
 
 .card {
   position: relative;
@@ -157,22 +167,19 @@ $white-color: #fff;
   word-wrap: break-word;
   background-color: $white-color;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid rgba($black-color, 0.125);
   border-radius: 0.25rem;
 }
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: rgba($black-color, 0.03);
+  border-bottom: 1px solid rgba($black-color, 0.125);
 }
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
-}
-.mb-4 {
-  margin-bottom: 1.5rem !important;
 }
 .d-flex {
   display: -ms-flexbox !important;
@@ -213,6 +220,9 @@ $white-color: #fff;
 .justify-content-end {
   justify-content: flex-end !important;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
 
 ul {
   margin-top: 0;
@@ -228,5 +238,49 @@ ul {
 }
 .nav-item a.active svg {
   stroke: $white-color;
+}
+.loader {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  background: $primary-color;
+  background: linear-gradient(to right, $primary-color 10%, rgba($white-color, 0) 42%);
+  position: relative;
+  animation: load 1s infinite linear;
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: $primary-color;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: $white-color;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
