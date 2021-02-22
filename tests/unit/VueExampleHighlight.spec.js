@@ -22,7 +22,7 @@ describe('VueExampleHighlight', () => {
     expect(pre.exists()).toBe(true);
     expect(code.exists()).toBe(true);
     expect(code.text()).toContain('Hello world');
-    console.log(wrapper.html());
+    // console.log(wrapper.html());
   });
 
   it('renders the correctly', () => {
