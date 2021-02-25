@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VueExampleHighlight renders the correctly 1`] = `
+<div class="language-html"><pre class="language-html"><code><p>Hello world</p></code></pre>
+</div>
+`;
