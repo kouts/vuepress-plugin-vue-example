@@ -132,6 +132,16 @@ describe('VueExample', () => {
     const pre = wrapper.find('pre.language-css');
     expect(pre.exists()).toBe(true);
     expect(wrapper).toMatchSnapshot();
-  });    
+  });
+
+  it('renders the title of the example section', async () => {
+    const title = 'My custom example title';
+    wrapper.setProps({ title });
+    await waitNT(wrapper.vm);
+    await waitRAF();
+    const a = wrapper.find('a.nav-link');
+    expect(a.exists()).toBe(true);
+    expect(a.text()).toContain(title);
+  });   
 
 });
