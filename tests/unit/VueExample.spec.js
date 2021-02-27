@@ -142,6 +142,19 @@ describe('VueExample', () => {
     const a = wrapper.find('a.nav-link');
     expect(a.exists()).toBe(true);
     expect(a.text()).toContain(title);
-  });   
+  });
+
+  it('doesn\'t render the labels', async () => {
+    wrapper.setProps({ showLabels: false });
+    await waitNT(wrapper.vm);
+    await waitRAF();
+    const templateLink = wrapper.findAll('ul.nav.nav-pills.justify-content-end li.nav-item a').at(0);
+    const scriptLink = wrapper.findAll('ul.nav.nav-pills.justify-content-end li.nav-item a').at(1);
+    const styleLink = wrapper.findAll('ul.nav.nav-pills.justify-content-end li.nav-item a').at(2);
+    expect(templateLink.text()).not.toContain('Template');
+    expect(scriptLink.text()).not.toContain('Script');
+    expect(styleLink.text()).not.toContain('Style');
+    // console.log(a.html());
+  });
 
 });
