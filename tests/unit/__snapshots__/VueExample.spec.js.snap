@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`VueExample renders correctly 1`] = `
+<div class="card">
+  <div class="card-header d-flex bg-white justify-content-between">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="#" class="nav-link active">
+          Example
+        </a></li>
+    </ul>
+    <ul class="nav nav-pills justify-content-end">
+      <!---->
+      <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-code">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <polyline points="7 8 3 12 7 16"></polyline>
+            <polyline points="17 8 21 12 17 16"></polyline>
+            <line x1="14" y1="4" x2="10" y2="20"></line>
+          </svg>
+          <!---->
+          <!---->
+          Template
+        </a></li>
+      <li class="nav-item"><a href="#" class="nav-link">
+          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-file-text">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+            <line x1="9" y1="9" x2="10" y2="9"></line>
+            <line x1="9" y1="13" x2="15" y2="13"></line>
+            <line x1="9" y1="17" x2="15" y2="17"></line>
+          </svg>
+          <!---->
+          Script
+        </a></li>
+      <li class="nav-item"><a href="#" class="nav-link">
+          <!---->
+          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-file-code">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+            <path d="M10 13l-1 2l1 2"></path>
+            <path d="M14 13l1 2l-1 2"></path>
+          </svg>
+          Style
+        </a></li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <p class="demo" file="test-component.vue" stripcomments="true" showlabels="true" showicons="true"><button class="btn-primary">(clicked - 0)
+      </button></p>
+  </div>
+</div>
+`;
+
 exports[`VueExample renders the script section 1`] = `
 <div class="card">
   <div class="card-header d-flex bg-white justify-content-between">
