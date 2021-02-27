@@ -5,13 +5,11 @@ exports[`VueExample renders the script section 1`] = `
   <div class="card-header d-flex bg-white justify-content-between">
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="#" class="nav-link">
-          example
+          Example
         </a></li>
     </ul>
     <ul class="nav nav-pills justify-content-end">
-      <li class="nav-item">
-        <!---->
-      </li>
+      <!---->
       <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-code">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <polyline points="7 8 3 12 7 16"></polyline>
@@ -80,13 +78,11 @@ exports[`VueExample renders the style section 1`] = `
   <div class="card-header d-flex bg-white justify-content-between">
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="#" class="nav-link">
-          example
+          Example
         </a></li>
     </ul>
     <ul class="nav nav-pills justify-content-end">
-      <li class="nav-item">
-        <!---->
-      </li>
+      <!---->
       <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-code">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <polyline points="7 8 3 12 7 16"></polyline>
@@ -152,13 +148,11 @@ exports[`VueExample renders the template section 1`] = `
   <div class="card-header d-flex bg-white justify-content-between">
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="#" class="nav-link">
-          example
+          Example
         </a></li>
     </ul>
     <ul class="nav nav-pills justify-content-end">
-      <li class="nav-item">
-        <!---->
-      </li>
+      <!---->
       <li class="nav-item"><a href="#" class="nav-link active"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-code">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <polyline points="7 8 3 12 7 16"></polyline>
