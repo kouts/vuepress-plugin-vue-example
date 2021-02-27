@@ -2,7 +2,7 @@ import { waitNT, waitRAF } from '../utils';
 import { mount } from '@vue/test-utils';
 import VueExample from '@/VueExample';
 jest.mock('@dynamic/loadComponent');
-import { loadComponent, loadComponentAsString } from '@dynamic/loadComponent';
+import { loadComponentAsString } from '@dynamic/loadComponent';
 
 const countLines = (str) => str.split(/\r\n|\r|\n/).length;
 
