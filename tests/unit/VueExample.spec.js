@@ -177,6 +177,33 @@ describe('VueExample', () => {
     });
     const loader = wrapperWithLoader.find('div.loader');
     expect(loader.exists()).toBe(true);
-  });  
+  });
+
+  it('shows comments inside sections\' contents', async () => {
+    const wrapperWithComments = mount(VueExample, {
+      propsData: {
+        ...props,
+        stripComments: false
+      }
+    });
+    // Comments in template
+    wrapperWithComments.setData({ sectionSelected: 'template' });
+    await waitNT(wrapperWithComments.vm);
+    await waitRAF();
+    let pre = wrapperWithComments.find('pre.language-markup');
+    expect(pre.text()).toContain('This is a test comment inside the template part');
+    // Comments in script
+    wrapperWithComments.setData({ sectionSelected: 'script' });
+    await waitNT(wrapperWithComments.vm);
+    await waitRAF();
+    pre = wrapperWithComments.find('pre.language-javascript');
+    expect(pre.text()).toContain('This is a test comment inside the script part');
+    // Comments in style
+    wrapperWithComments.setData({ sectionSelected: 'style' });
+    await waitNT(wrapperWithComments.vm);
+    await waitRAF();
+    pre = wrapperWithComments.find('pre.language-css');
+    expect(pre.text()).toContain('This is a test comment inside the style part');    
+  });   
 
 });
