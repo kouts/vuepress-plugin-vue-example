@@ -26,8 +26,12 @@ afterEach(() => {
 
 describe('VueExample', () => {
 
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
+    await waitNT(wrapper.vm);
+    await waitRAF();
     const div = wrapper.find('div.card');
+    expect(div.exists()).toBe(true);
+    expect(wrapper).toMatchSnapshot();    
     // console.log(wrapper.html());
   });
 
@@ -144,7 +148,7 @@ describe('VueExample', () => {
     expect(a.text()).toContain(title);
   });
 
-  it('doesn\'t render the labels', async () => {
+  it('hides the labels', async () => {
     wrapper.setProps({ showLabels: false });
     await waitNT(wrapper.vm);
     await waitRAF();
@@ -154,7 +158,25 @@ describe('VueExample', () => {
     expect(templateLink.text()).not.toContain('Template');
     expect(scriptLink.text()).not.toContain('Script');
     expect(styleLink.text()).not.toContain('Style');
-    // console.log(a.html());
   });
+
+  it('hides the icons', async () => {
+    wrapper.setProps({ showIcons: false });
+    await waitNT(wrapper.vm);
+    await waitRAF();
+    const svgIcons = wrapper.findAll('ul.nav.nav-pills.justify-content-end li.nav-item svg');
+    expect(svgIcons.length).toBe(0);
+  });
+
+  it('shows a loader', async () => {
+    const wrapperWithLoader = mount(VueExample, {
+      propsData: {
+        ...props,
+        showLoader: true
+      }
+    });
+    const loader = wrapperWithLoader.find('div.loader');
+    expect(loader.exists()).toBe(true);
+  });  
 
 });
