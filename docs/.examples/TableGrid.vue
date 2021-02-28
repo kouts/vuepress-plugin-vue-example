@@ -31,16 +31,11 @@ export default {
   props: {
     heroes: {
       type: Array,
-      default: () => [
-        { name: 'Chuck Norris', power: Infinity },
-        { name: 'Bruce Lee', power: 9000 },
-        { name: 'Jackie Chan', power: 7000 },
-        { name: 'Jet Li', power: 8000 }
-      ]
+      default: () => []
     },
     columns: {
       type: Array,
-      default: () => ['name', 'power']
+      default: () => []
     },
     filterKey: String
   },

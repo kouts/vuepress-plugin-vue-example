@@ -14,4 +14,4 @@ A Vuepress plugin to display Vue components\' live examples and source code insi
 
 <h2 class="mb-4">Live demo</h2>
 
-<vue-example file="Example1" />
+<Example1 />
