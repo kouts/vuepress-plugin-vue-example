@@ -1,9 +1,9 @@
-const VueExamplePlugin = require('./plugins/vue-example/index.js');
+const VueExamplePlugin = require('../../src/index.js');
 
 module.exports = {
   plugins: [
     VueExamplePlugin({
-      componentsPath: '/docs/.vuepress/components/'
+      componentsPath: '/docs/.examples/'
     })
   ],
   dest: 'public',
@@ -16,7 +16,6 @@ module.exports = {
     sidebar: [
       ['/', 'Introduction'],
       ['/installation/', 'Installation'],
-      ['/components/', 'Components'],
       {
         title: 'Examples',
         collapsable: true,
