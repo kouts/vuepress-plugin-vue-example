@@ -1,50 +1,48 @@
-## Basic
+## Installation
 
-Download the repo, extract 
-- ```Dataset.min.js``` 
-- ```DatasetItem.min.js```
-- ```DatasetInfo.min.js```
-- ```DatasetPager.min.js```
-- ```DatasetSearch.min.js```
-- ```DatasetShow.min.js```
-
-out of the ```dist/umd``` folder
-and insert them in your page.
-
-``` html
-<script type="text/javascript" src="Dataset.min.js"></script>
-<script type="text/javascript" src="DatasetItem.min.js"></script>
-<script type="text/javascript" src="DatasetInfo.min.js"></script>
-<script type="text/javascript" src="DatasetPager.min.js"></script>
-<script type="text/javascript" src="DatasetSearch.min.js"></script>
-<script type="text/javascript" src="DatasetShow.min.js"></script>
+Install `vuepress-plugin-vue-example` via npm
+```
+npm install vuepress-plugin-vue-example --save-dev
 ```
 
-## Module System
 
-Install it via npm
+## Usage
+
+Check out the official Vuepress documentation for [Using a Plugin](https://vuepress.vuejs.org/plugin/using-a-plugin.html).
+
+### Register the plugin inside Vuepress config
+```javascript
+// .vuepress/config.js
+module.exports = {
+  plugins: [
+    VueExamplePlugin({
+      // You need to provide a directory that all the example .vue files will be stored.
+      // You can use sub-directories to separate examples into categories.
+      componentsPath: '/examples/'
+    })
+  ],
+};
 ```
-npm i vue-dataset --save
-```
-Use the ```import``` statement to include `vue-dataset` components into your bundle.  
-You can import each component individually 
-``` js
-import Dataset from 'vue-dataset/dist/es/Dataset.js';
-import DatasetItem from 'vue-dataset/dist/es/DatasetItem.js';
-import DatasetInfo from 'vue-dataset/dist/es/DatasetInfo.js';
-import DatasetPager from 'vue-dataset/dist/es/DatasetPager.js';
-import DatasetSearch from 'vue-dataset/dist/es/DatasetSearch.js';
-import DatasetShow from 'vue-dataset/dist/es/DatasetShow.js';
+### Use the vue-example component
+This plugin provides an automatically registered Vue component that you can use inside in your `.md` or `.vue` files.
+
+#### Inside `.md` files
+```md
+// .md file
+
+...
+your content
+...
+
+<vue-example file="example" />
 ```
 
-or using named imports
-```js
-import { 
-  Dataset,
-  DatasetItem,
-  DatasetInfo,
-  DatasetPager,
-  DatasetSearch,
-  DatasetShow
-} from 'vue-dataset';
+#### Inside `.vue` files
+
+```vue
+// .vue file
+
+<template>
+  <vue-example file="example" />
+</template>
 ```
