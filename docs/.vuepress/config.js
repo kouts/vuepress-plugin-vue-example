@@ -15,7 +15,7 @@ module.exports = {
     ],
     sidebar: [
       ['/', 'Introduction'],
-      ['/installation/', 'Installation'],
+      ['/installation/', 'Installation and Usage'],
       {
         title: 'Examples',
         collapsable: true,
