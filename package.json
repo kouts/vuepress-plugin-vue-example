@@ -24,7 +24,9 @@
     "test:unit": "vue-cli-service test:unit",
     "watch": "vuepress dev docs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "raw-loader": "^4.0.2"
+  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.11",
     "@vue/cli-plugin-unit-jest": "^4.5.11",
@@ -40,11 +42,11 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.1.0",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.14.1",
     "jest-raw-loader": "^1.0.1",
+    "node-sass": "^4.14.1",
     "prismjs": "^1.23.0",
-    "vue": "^2.6.12",
     "sass-loader": "^8.0.2",
+    "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12",
     "vuepress": "^1.8.2"
   }
