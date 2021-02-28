@@ -1,38 +1,17 @@
----
-pageClass: vue-example-page
----
 
-# vue-example
+# vuepress-plugin-vue-example
 
-A set of Vue.js components to display datasets (lists) with filtering, paging, and sorting capabilities!  
-Created with reusability in mind, so that one doesn't have to recreate the same functionality for lists over and over again.
-
-> vue-dataset does not impose any structure or layout limitations on your HTML, you can use divs, tables or anything you like to present your data.
+A Vuepress plugin to display Vue components\' live examples and source code inside documentation.
 
 ## Features
 
-- Highly customizable DOM structure
-- Custom filtering based on the row values from all or specific data keys
-- "Search as" feature allows for searching using a custom search method
-- Multi "column" searching, search data keys are configurable
-- "Sort as" feature allows for sorting using a custom sorting method
-- Multi "column" sorting, sortable data keys are configurable
-- Pagination
-- Global search with debounce setting
-- Easy to extend with custom components
+- Easy to use, with just a single `vue-example` tag inside `.md` files
+- Uses the built-in syntax highlighting features of Vuepress
+- Displays the live example
+- Splits source code in separate sections for `template` `script` and `style`
+- Capability to strip comments from the source code
+- Capability to add custom code before each section using slots
 
-
-`vue-dataset` contains 6 components
-
-| Component      | Description |
-| ----------- | ----------- |
-| `dataset`      | Responsible for distributing data/methods to children (wrapper/data provider)       |
-| `dataset-item`   | Renders the dataset items        |
-| `dataset-info`   | Renders the paging information        |
-| `dataset-pager`   | Renders the paging buttons        |
-| `dataset-search`   | Renders the search input field        |
-| `dataset-show`   | Renders the "items per page" dropdown select        |
-
-<h2 class="mb-4">Example using cards</h2>
+<h2 class="mb-4">Live demo</h2>
 
 <vue-example file="Example1" />
