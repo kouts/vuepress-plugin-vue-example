@@ -8,7 +8,7 @@ module.exports = {
   ],
   dest: 'public',
   title: 'vuepress-plugin-vue-example',
-  description: 'A Vuepress plugin to display the source code of Vue components',
+  description: 'A Vuepress plugin to display Vue components\' live examples and source code inside documentation.',
   themeConfig: {
     nav: [
       { text: 'Github', link: 'https://github.com/kouts/vuepress-plugin-vue-example' }

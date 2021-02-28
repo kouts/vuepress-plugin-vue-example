@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-vue-example",
-  "description": "A Vuepress plugin to display Vue components' example source code",
+  "description": "A Vuepress plugin to display Vue components' live examples and source code inside documentation",
   "version": "0.0.2",
   "author": "Giannis Koutsaftakis",
   "license": "MIT",
