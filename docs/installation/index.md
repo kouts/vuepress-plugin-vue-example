@@ -46,5 +46,3 @@ your content
   <vue-example file="example" />
 </template>
 ```
-
-### Component props
