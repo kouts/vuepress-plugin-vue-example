@@ -16,7 +16,9 @@ module.exports = {
     sidebar: [
       ['/', 'Introduction'],
       ['/installation/', 'Installation and Usage'],
-      ['/options/', 'Options'],
+      ['/options/', 'Options']
+      /*
+      ,
       {
         title: 'Examples',
         collapsable: true,
@@ -25,6 +27,7 @@ module.exports = {
           ['/examples/datatable/', 'Datatable']
         ]
       }
+      */
     ]
   },
   head: [
