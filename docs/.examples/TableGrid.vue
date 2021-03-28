@@ -92,6 +92,7 @@ export default {
 
 <style scoped>
 table {
+  margin: 0px;
   border: 2px solid #42b983;
   border-radius: 3px;
   background-color: #fff;
