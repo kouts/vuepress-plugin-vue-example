@@ -104,6 +104,10 @@ export default {
     showLoader: {
       type: Boolean,
       default: false
+    },
+    startExpanded: {
+      type: Boolean,
+      default: true      
     }
   },
   data () {
@@ -117,6 +121,7 @@ export default {
   created () {
     this.createComponent();
     this.createSections();
+    this.expanded = this.startExpanded;
   },
   methods: {
     createComponent () {
