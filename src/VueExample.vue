@@ -13,16 +13,16 @@
       </ul>
       <ul class="nav nav-pills justify-content-end">
         <template v-for="(section, i) in sections">
-          <li v-if="i !== 0" :key="section.name" class="nav-item" @click.prevent="sectionSelected = section.name">
-            <a href="#" :class="['nav-link', section.name === sectionSelected && 'active']">
+          <li v-if="i !== 0" :key="section.name" class="nav-item">
+            <a href="#" :class="['nav-link', section.name === sectionSelected && 'active']" @click.prevent="sectionSelected = section.name">
               <slot :name="section.name + '-label'">
-                <svg v-if="section.name === 'template' && showIcons" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg v-if="section.name === 'template' && showIcons" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <polyline points="7 8 3 12 7 16" />
                   <polyline points="17 8 21 12 17 16" />
                   <line x1="14" y1="4" x2="10" y2="20" />
                 </svg>
-                <svg v-if="section.name === 'script' && showIcons" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-text" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg v-if="section.name === 'script' && showIcons" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
                   <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
@@ -30,7 +30,7 @@
                   <line x1="9" y1="13" x2="15" y2="13" />
                   <line x1="9" y1="17" x2="15" y2="17" />
                 </svg>
-                <svg v-if="section.name === 'style' && showIcons" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-code" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg v-if="section.name === 'style' && showIcons" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
                   <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
@@ -44,9 +44,18 @@
             </a>
           </li>
         </template>
+        <li class="d-flex align-items-center">
+          <a href="#" class="ml-2 mr-n2 expand-collapse" @click.prevent="expanded = !expanded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 10l3 -3l3 3" />
+              <path d="M9 14l3 3l3 -3" />
+            </svg>
+          </a>
+        </li>          
       </ul>
     </div>
-    <div class="card-body">
+    <div v-show="expanded" class="card-body">
       <template v-for="section in sections">
         <div v-if="sectionSelected === section.name && section.name !== 'example'" :key="section.name">
           <slot :name="section.name"></slot>
@@ -101,7 +110,8 @@ export default {
     return {
       component: undefined,
       sections: [],
-      sectionSelected: 'example'
+      sectionSelected: 'example',
+      expanded: true
     };
   },
   created () {
@@ -150,6 +160,9 @@ export default {
         str = str.replace(/^\s*[\r\n]/gm, '');
       }
       return str;
+    },
+    expandCollapse () {
+      alert('hi')
     }
   }
 };
@@ -159,6 +172,7 @@ export default {
 $primary-color: #3eaf7c;
 $white-color: #fff;
 $black-color: #000;
+$secondary-color: #717d89;
 
 .card {
   position: relative;
@@ -276,6 +290,12 @@ ul {
   left: 0;
   bottom: 0;
   right: 0;
+}
+.expand-collapse svg {
+  stroke: rgba($secondary-color, 0.7);
+}
+.expand-collapse:hover svg {
+  stroke: $secondary-color;
 }
 @keyframes load {
   0% {
