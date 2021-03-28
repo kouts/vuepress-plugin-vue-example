@@ -60,7 +60,14 @@ It may contain sub-folders for better organization.
       <td>Boolean</td>
       <td>false</td>
       <td>false</td>
-    </tr>      
+    </tr>
+    <tr>
+      <td>startExpanded</td>
+      <td>Controls whether the main section should be expanded upon initialization</td>
+      <td>Boolean</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>          
   </tbody>
 </table>
 
