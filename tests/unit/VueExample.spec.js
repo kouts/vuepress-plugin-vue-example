@@ -204,6 +204,18 @@ describe('VueExample', () => {
     await waitRAF();
     pre = wrapperWithComments.find('pre.language-css');
     expect(pre.text()).toContain('This is a test comment inside the style part');    
-  });   
+  });
+
+  it('shows and hides the main section depending on the expanded data variable', async () => {
+    wrapper.setData({ expanded: false });
+    await waitNT(wrapper.vm);
+    await waitRAF();
+    const cardBody = wrapper.find('div.card-body');
+    expect(cardBody.attributes().style).toBe('display: none;');
+    wrapper.setData({ expanded: true });
+    await waitNT(wrapper.vm);
+    await waitRAF();
+    expect(cardBody.attributes().style).toBe('');
+  });
 
 });
