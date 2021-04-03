@@ -13,6 +13,8 @@ Check out the official Vuepress documentation for [Using a Plugin](https://vuepr
 ### Register the plugin inside Vuepress config
 ```javascript
 // .vuepress/config.js
+const VueExamplePlugin = require('vuepress-plugin-vue-example');
+
 module.exports = {
   plugins: [
     VueExamplePlugin({
