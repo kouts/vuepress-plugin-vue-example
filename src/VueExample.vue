@@ -165,9 +165,6 @@ export default {
         str = str.replace(/^\s*[\r\n]/gm, '');
       }
       return str;
-    },
-    expandCollapse () {
-      alert('hi')
     }
   }
 };
