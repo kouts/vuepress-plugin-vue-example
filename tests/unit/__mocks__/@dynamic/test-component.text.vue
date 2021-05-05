@@ -1,9 +1,7 @@
 <template>
   <!-- This is a test comment inside the template part -->
   <p class="demo">
-    <button class="btn-primary" @click.prevent="handleClick">
-      <slot></slot>(clicked - {{ count }})
-    </button>
+    <button class="btn-primary" @click.prevent="handleClick"><slot></slot>(clicked - {{ count }})</button>
   </p>
 </template>
 
@@ -12,16 +10,16 @@ export default {
   // This is a test comment inside the script part
   data() {
     return {
-      count: 0,
-    };
+      count: 0
+    }
   },
   methods: {
     handleClick() {
-      this.count++;
-      console.log('clicked', this.count);
-    },
-  },
-};
+      this.count++
+      console.log('clicked', this.count)
+    }
+  }
+}
 </script>
 
 <style scoped>

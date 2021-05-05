@@ -1,5 +1,5 @@
-import VueExample from './VueExample.vue';
+import VueExample from './VueExample.vue'
 
 export default ({ Vue }) => {
-  Vue.component('vue-example', VueExample);
-};
+  Vue.component('VueExample', VueExample)
+}

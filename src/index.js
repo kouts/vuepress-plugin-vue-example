@@ -1,11 +1,15 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = (options, context) => ({
   name: 'vue-example',
-  clientDynamicModules () {
-    const opts = Object.assign({}, {
-      componentsPath: '/docs/.vuepress/components'
-    }, options);
+  clientDynamicModules() {
+    const opts = Object.assign(
+      {},
+      {
+        componentsPath: '/docs/.vuepress/components'
+      },
+      options
+    )
     return {
       name: 'loadComponent.js',
       content: `
@@ -25,7 +29,7 @@ module.exports = (options, context) => ({
         }        
       }
       `
-    };
+    }
   },
   enhanceAppFiles: [path.resolve(__dirname, 'enhanceAppFile.js')]
-});
+})
