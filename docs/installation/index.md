@@ -13,7 +13,7 @@ Check out the official Vuepress documentation for [Using a Plugin](https://vuepr
 ### Register the plugin inside Vuepress config
 ```javascript
 // .vuepress/config.js
-const VueExamplePlugin = require('vuepress-plugin-vue-example');
+const VueExamplePlugin = require('vuepress-plugin-vue-example')
 
 module.exports = {
   plugins: [
@@ -23,7 +23,7 @@ module.exports = {
       componentsPath: '/examples/'
     })
   ],
-};
+}
 ```
 ### Use the vue-example component
 This plugin provides an automatically registered Vue component that you can use inside in your `.md` or `.vue` files.

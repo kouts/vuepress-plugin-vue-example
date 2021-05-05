@@ -14,15 +14,39 @@
       <ul class="nav nav-pills justify-content-end">
         <template v-for="(section, i) in sections">
           <li v-if="i !== 0" :key="section.name" class="nav-item">
-            <a href="#" :class="['nav-link', section.name === sectionSelected && 'active']" @click.prevent="sectionSelected = section.name">
+            <a
+              href="#"
+              :class="['nav-link', section.name === sectionSelected && 'active']"
+              @click.prevent="sectionSelected = section.name"
+            >
               <slot :name="section.name + '-label'">
-                <svg v-if="section.name === 'template' && showIcons" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                  v-if="section.name === 'template' && showIcons"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <polyline points="7 8 3 12 7 16" />
                   <polyline points="17 8 21 12 17 16" />
                   <line x1="14" y1="4" x2="10" y2="20" />
                 </svg>
-                <svg v-if="section.name === 'script' && showIcons" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                  v-if="section.name === 'script' && showIcons"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
                   <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
@@ -30,7 +54,17 @@
                   <line x1="9" y1="13" x2="15" y2="13" />
                   <line x1="9" y1="17" x2="15" y2="17" />
                 </svg>
-                <svg v-if="section.name === 'style' && showIcons" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                  v-if="section.name === 'style' && showIcons"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
                   <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
@@ -46,13 +80,23 @@
         </template>
         <li class="d-flex align-items-center">
           <a href="#" class="ml-2 mr-n2 expand-collapse" @click.prevent="expanded = !expanded">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#000000"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 10l3 -3l3 3" />
               <path d="M9 14l3 3l3 -3" />
             </svg>
           </a>
-        </li>          
+        </li>
       </ul>
     </div>
     <div v-show="expanded" class="card-body">
@@ -72,8 +116,8 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import { loadComponent, loadComponentAsString } from '@dynamic/loadComponent';
-import VueExampleHighlight from './VueExampleHighlight';
+import { loadComponent, loadComponentAsString } from '@dynamic/loadComponent'
+import VueExampleHighlight from './VueExampleHighlight'
 
 export default {
   name: 'SourceView',
@@ -107,67 +151,77 @@ export default {
     },
     startExpanded: {
       type: Boolean,
-      default: true      
+      default: true
     }
   },
-  data () {
+  data() {
     return {
       component: undefined,
       sections: [],
       sectionSelected: 'example',
       expanded: true
-    };
+    }
   },
-  created () {
-    this.createComponent();
-    this.createSections();
-    this.expanded = this.startExpanded;
+  created() {
+    this.createComponent()
+    this.createSections()
+    this.expanded = this.startExpanded
   },
   methods: {
-    createComponent () {
-      loadComponent(this.$props.file).then(component => { 
-        this.component = component;
-      });
+    createComponent() {
+      loadComponent(this.$props.file).then((component) => {
+        this.component = component
+      })
     },
-    createSections () {
-      loadComponentAsString(this.$props.file).then(contents => {
-        const sections = [];
-        sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' });
-        sections.push({ name: 'template', label: 'Template', contents: this.parseSfcSection('template', contents), language: 'markup' });
-        sections.push({ name: 'script', label: 'Script', contents: this.parseSfcSection('script', contents), language: 'javascript' });
-        sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' });
-        this.sections = sections.filter(s => s.contents);
-      });
+    createSections() {
+      loadComponentAsString(this.$props.file).then((contents) => {
+        const sections = []
+        sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })
+        sections.push({
+          name: 'template',
+          label: 'Template',
+          contents: this.parseSfcSection('template', contents),
+          language: 'markup'
+        })
+        sections.push({
+          name: 'script',
+          label: 'Script',
+          contents: this.parseSfcSection('script', contents),
+          language: 'javascript'
+        })
+        sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' })
+        this.sections = sections.filter((s) => s.contents)
+      })
     },
-    parseSfcSection (tag, contents) {
-      const string = `(<${tag}(.*)?>[\\w\\W]*<\\/${tag}>)`;
-      const regex = new RegExp(string, 'g');
-      const parsed = regex.exec(contents) || [];
-      const str = parsed[1] || '';
-      return this.stripComments ? this.removeComments(tag, str) : str;
+    parseSfcSection(tag, contents) {
+      const string = `(<${tag}(.*)?>[\\w\\W]*<\\/${tag}>)`
+      const regex = new RegExp(string, 'g')
+      const parsed = regex.exec(contents) || []
+      const str = parsed[1] || ''
+      return this.stripComments ? this.removeComments(tag, str) : str
     },
-    removeComments (tag, str) {
+    removeComments(tag, str) {
       if (tag === 'template') {
-        str = str.replace(/(<!--.*?-->)|(<!--[\S\s]+?-->)|(<!--[\S\s]*?$)/g, '');
+        str = str.replace(/(<!--.*?-->)|(<!--[\S\s]+?-->)|(<!--[\S\s]*?$)/g, '')
         // Remove all extra line breaks
-        str = str.replace(/^\s*[\r\n]/gm, '');
+        str = str.replace(/^\s*[\r\n]/gm, '')
       }
       if (tag === 'script') {
-        str = str.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '');
+        str = str.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '')
         // Remove more than one line breaks
-        const EOL = str.match(/\r\n/gm) ? '\r\n' : '\n';
-        const regExp = new RegExp('(' + EOL + '){3,}', 'gm');
-        str = str.replace(regExp, EOL + EOL);
+        const EOL = str.match(/\r\n/gm) ? '\r\n' : '\n'
+        const regExp = new RegExp('(' + EOL + '){3,}', 'gm')
+        str = str.replace(regExp, EOL + EOL)
       }
       if (tag === 'style') {
-        str = str.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '');
+        str = str.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '')
         // Remove all extra line breaks
-        str = str.replace(/^\s*[\r\n]/gm, '');
+        str = str.replace(/^\s*[\r\n]/gm, '')
       }
-      return str;
+      return str
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -218,7 +272,8 @@ $secondary-color: #717d89;
   display: block;
   padding: 0.5rem 1rem;
 }
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus {
   text-decoration: none;
 }
 .nav-pills .nav-link {
@@ -232,7 +287,8 @@ $secondary-color: #717d89;
 .justify-content-between {
   justify-content: space-between !important;
 }
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus {
   text-decoration: none;
 }
 .justify-content-end {

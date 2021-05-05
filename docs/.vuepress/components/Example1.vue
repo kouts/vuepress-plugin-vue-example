@@ -5,7 +5,7 @@
 <script>
 export default {
   name: 'Example1',
-  data: function() {
+  data: function () {
     return {
       heroes: [
         { name: 'Chuck Norris', power: Infinity },
@@ -14,7 +14,7 @@ export default {
         { name: 'Jet Li', power: 8000 }
       ],
       columns: ['name', 'power']
-    };
+    }
   }
-};
+}
 </script>
