@@ -2,23 +2,15 @@
   <table>
     <thead>
       <tr>
-        <th
-          v-for="key in columns"
-          @click="sortBy(key)"
-          :class="{ active: sortKey == key }"
-        >
+        <th v-for="(key, index) in columns" :key="index" :class="{ active: sortKey == key }" @click="sortBy(key)">
           {{ key | capitalize }}
-          <span
-            class="arrow"
-            :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"
-          >
-          </span>
+          <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"> </span>
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="entry in filteredHeroes">
-        <td v-for="key in columns">
+      <tr v-for="(entry, heroesIndex) in filteredHeroes" :key="heroesIndex">
+        <td v-for="(key, columnIndex) in columns" :key="columnIndex">
           {{ entry[key] }}
         </td>
       </tr>
@@ -28,6 +20,11 @@
 
 <script>
 export default {
+  filters: {
+    capitalize: function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1)
+    }
+  },
   props: {
     heroes: {
       type: Array,
@@ -37,57 +34,51 @@ export default {
       type: Array,
       default: () => []
     },
-    filterKey: String
+    filterKey: {
+      type: String,
+      default: ''
+    }
   },
-  data: function() {
-    var sortOrders = {};
-    this.columns.forEach(function(key) {
-      sortOrders[key] = 1;
-    });
+  data: function () {
+    const sortOrders = {}
+    this.columns.forEach(function (key) {
+      sortOrders[key] = 1
+    })
     return {
       sortKey: '',
       sortOrders: sortOrders
-    };
-  },
-  computed: {
-    filteredHeroes: function() {
-      var sortKey = this.sortKey;
-      var filterKey = this.filterKey && this.filterKey.toLowerCase();
-      var order = this.sortOrders[sortKey] || 1;
-      var heroes = this.heroes;
-      if (filterKey) {
-        heroes = heroes.filter(function(row) {
-          return Object.keys(row).some(function(key) {
-            return (
-              String(row[key])
-                .toLowerCase()
-                .indexOf(filterKey) > -1
-            );
-          });
-        });
-      }
-      if (sortKey) {
-        heroes = heroes.slice().sort(function(a, b) {
-          a = a[sortKey];
-          b = b[sortKey];
-          return (a === b ? 0 : a > b ? 1 : -1) * order;
-        });
-      }
-      return heroes;
     }
   },
-  filters: {
-    capitalize: function(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
+  computed: {
+    filteredHeroes: function () {
+      const sortKey = this.sortKey
+      const filterKey = this.filterKey && this.filterKey.toLowerCase()
+      const order = this.sortOrders[sortKey] || 1
+      let heroes = this.heroes
+      if (filterKey) {
+        heroes = heroes.filter(function (row) {
+          return Object.keys(row).some(function (key) {
+            return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+          })
+        })
+      }
+      if (sortKey) {
+        heroes = heroes.slice().sort(function (a, b) {
+          a = a[sortKey]
+          b = b[sortKey]
+          return (a === b ? 0 : a > b ? 1 : -1) * order
+        })
+      }
+      return heroes
     }
   },
   methods: {
-    sortBy: function(key) {
-      this.sortKey = key;
-      this.sortOrders[key] = this.sortOrders[key] * -1;
+    sortBy: function (key) {
+      this.sortKey = key
+      this.sortOrders[key] = this.sortOrders[key] * -1
     }
   }
-};
+}
 </script>
 
 <style scoped>
