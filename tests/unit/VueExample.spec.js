@@ -36,7 +36,7 @@ describe('VueExample', () => {
 
   it('parses the template SFC sections', () => {
     const parsed = wrapper.vm.parseSfcSection('template', contents)
-    expect(countLines(parsed)).toBe(7)
+    expect(countLines(parsed)).toBe(5)
     expect(parsed).toContain('<template>')
     expect(parsed).toContain('</template>')
     expect(parsed).not.toContain('<script>')
