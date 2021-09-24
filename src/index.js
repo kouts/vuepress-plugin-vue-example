@@ -1,8 +1,8 @@
 const path = require('path')
 
-module.exports = (options, context) => ({
+module.exports = (options, appContext) => ({
   name: 'vue-example',
-  clientDynamicModules() {
+  async onPrepared(app) {
     const opts = Object.assign(
       {},
       {
@@ -10,9 +10,9 @@ module.exports = (options, context) => ({
       },
       options
     )
-    return {
-      name: 'loadComponent.js',
-      content: `
+    await app.writeTemp(
+      'loadComponent.js',
+      `
       export function loadComponent (file) {
         try {
           return import('${opts.componentsPath}' + file + '.vue').then(component => component.default);
@@ -28,8 +28,8 @@ module.exports = (options, context) => ({
           console.log(err);
         }        
       }
-      `
-    }
+    `
+    )
   },
-  enhanceAppFiles: [path.resolve(__dirname, 'enhanceAppFile.js')]
+  clientAppEnhanceFiles: [path.resolve(__dirname, 'clientAppEnhanceFiles.js')]
 })

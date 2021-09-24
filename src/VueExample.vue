@@ -108,7 +108,7 @@
       </template>
       <template v-if="sectionSelected === 'example'">
         <slot></slot>
-        <component :is="component" v-if="component" v-bind="{ ...$attrs, ...$props }" v-on="$listeners" />
+        <component :is="component" v-if="component" v-bind="{ ...$attrs, ...$props }" />
       </template>
     </div>
   </div>
@@ -116,8 +116,9 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import { loadComponent, loadComponentAsString } from '@dynamic/loadComponent'
+import { loadComponent, loadComponentAsString } from '@temp/loadComponent'
 import VueExampleHighlight from './VueExampleHighlight'
+import { markRaw } from 'vue'
 
 export default {
   name: 'SourceView',
@@ -170,7 +171,7 @@ export default {
   methods: {
     createComponent() {
       loadComponent(this.$props.file).then((component) => {
-        this.component = component
+        this.component = markRaw(component)
       })
     },
     createSections() {

@@ -79,3 +79,46 @@ blockquote p {color: #777;}
 .theme-default-content:not(.custom) {
   box-sizing: content-box;
 }
+
+/* Fix links appearance */
+.dataset-page .theme-default-content:not(.custom) ul.pagination a:hover {
+  text-decoration: none;
+}
+
+/* Fix margin-top for first paragraph */
+.theme-container .theme-default-content:not(.custom) > h2:first-child + p {
+  margin-top: 0 !important;
+}
+
+/* Fix margin-bottom for headers */
+.theme-container .theme-default-content:not(.custom) > h2, 
+.theme-container .theme-default-content:not(.custom) > h3, 
+.theme-container .theme-default-content:not(.custom) > h4, 
+.theme-container .theme-default-content:not(.custom) > h5, 
+.theme-container .theme-default-content:not(.custom) > h6 {
+  margin-bottom: 1rem !important;
+}
+
+/* Fix footer nav links */
+.page-nav .nav-link, .page-meta .nav-link {
+  display: inline;
+  padding: 0;
+}
+
+/* Fix stripped table rows colors */
+.table.table-striped tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+/* Fix headings font-size */
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.65rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+}

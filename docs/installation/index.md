@@ -1,8 +1,8 @@
 ## Installation
 
-Install `vuepress-plugin-vue-example` via npm
+Install `vuepress-plugin-vue-example@next` via npm
 ```
-npm install vuepress-plugin-vue-example --save-dev
+npm install vuepress-plugin-vue-example@next --save-dev
 ```
 
 

@@ -3,7 +3,7 @@
     <thead>
       <tr>
         <th v-for="(key, index) in columns" :key="index" :class="{ active: sortKey == key }" @click="sortBy(key)">
-          {{ key | capitalize }}
+          {{ capitalize(key) }}
           <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"> </span>
         </th>
       </tr>
@@ -20,11 +20,6 @@
 
 <script>
 export default {
-  filters: {
-    capitalize: function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1)
-    }
-  },
   props: {
     heroes: {
       type: Array,
@@ -73,6 +68,9 @@ export default {
     }
   },
   methods: {
+    capitalize: function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1)
+    },
     sortBy: function (key) {
       this.sortKey = key
       this.sortOrders[key] = this.sortOrders[key] * -1

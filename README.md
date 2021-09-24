@@ -1,6 +1,6 @@
 # vuepress-plugin-vue-example
 
-A Vuepress plugin to display Vue components\' live examples and source code inside documentation.
+A Vuepress 2 plugin to display Vue components' live examples and source code inside documentation.
 
 ## Features
 
@@ -19,4 +19,4 @@ A Vuepress plugin to display Vue components\' live examples and source code insi
 | IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 Documentation and examples
-https://vuepress-plugin-vue-example.netlify.app/
+https://next--vuepress-plugin-vue-example.netlify.app/
