@@ -1,8 +1,8 @@
 import { waitNT, waitRAF } from '../utils'
 import { mount } from '@vue/test-utils'
 import VueExample from '@/VueExample'
-import { loadComponentAsString } from '@dynamic/loadComponent'
-jest.mock('@dynamic/loadComponent')
+import { loadComponentAsString } from '@temp/loadComponent'
+jest.mock('@temp/loadComponent')
 
 const countLines = (str) => str.split(/\r\n|\r|\n/).length
 
@@ -15,13 +15,13 @@ let contents
 
 beforeEach(async () => {
   wrapper = mount(VueExample, {
-    propsData: props
+    props
   })
   contents = await loadComponentAsString()
 })
 
 afterEach(() => {
-  wrapper.destroy()
+  wrapper.unmount()
 })
 
 describe('VueExample', () => {
@@ -30,7 +30,7 @@ describe('VueExample', () => {
     await waitRAF()
     const div = wrapper.find('div.card')
     expect(div.exists()).toBe(true)
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
     // console.log(wrapper.html());
   })
 
@@ -116,7 +116,7 @@ describe('VueExample', () => {
     await waitRAF()
     const pre = wrapper.find('pre.language-markup')
     expect(pre.exists()).toBe(true)
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('renders the script section', async () => {
@@ -125,7 +125,7 @@ describe('VueExample', () => {
     await waitRAF()
     const pre = wrapper.find('pre.language-javascript')
     expect(pre.exists()).toBe(true)
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('renders the style section', async () => {
@@ -134,7 +134,7 @@ describe('VueExample', () => {
     await waitRAF()
     const pre = wrapper.find('pre.language-css')
     expect(pre.exists()).toBe(true)
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('renders the title of the example section', async () => {

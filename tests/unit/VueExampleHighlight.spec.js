@@ -12,7 +12,7 @@ describe('VueExampleHighlight', () => {
 
   it('renders the correct markup', () => {
     const wrapper = shallowMount(VueExampleHighlight, {
-      propsData: props
+      props
     })
     const div = wrapper.find(`div.language-${wrapper.props().language}`)
     const pre = wrapper.find(`pre.language-${wrapper.props().language}`)
@@ -21,13 +21,13 @@ describe('VueExampleHighlight', () => {
     expect(pre.exists()).toBe(true)
     expect(code.exists()).toBe(true)
     expect(code.text()).toContain('Hello world')
-    // console.log(wrapper.html());
+    // console.log(wrapper.html())
   })
 
   it('renders the correctly', () => {
     const wrapper = shallowMount(VueExampleHighlight, {
-      propsData: props
+      props
     })
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

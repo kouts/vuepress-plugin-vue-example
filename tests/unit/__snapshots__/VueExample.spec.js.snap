@@ -4,24 +4,21 @@ exports[`VueExample renders correctly 1`] = `
 <div class="card">
   <div class="card-header d-flex bg-white justify-content-between">
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link active">
-          Example
-        </a></li>
+      <li class="nav-item"><a href="#" class="nav-link active">Example</a></li>
     </ul>
     <ul class="nav nav-pills justify-content-end">
-      <!---->
+      <!--v-if-->
       <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <polyline points="7 8 3 12 7 16"></polyline>
             <polyline points="17 8 21 12 17 16"></polyline>
             <line x1="14" y1="4" x2="10" y2="20"></line>
           </svg>
-          <!---->
-          <!---->
-          Template
+          <!--v-if-->
+          <!--v-if-->Template
         </a></li>
       <li class="nav-item"><a href="#" class="nav-link">
-          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
@@ -29,19 +26,17 @@ exports[`VueExample renders correctly 1`] = `
             <line x1="9" y1="13" x2="15" y2="13"></line>
             <line x1="9" y1="17" x2="15" y2="17"></line>
           </svg>
-          <!---->
-          Script
+          <!--v-if-->Script
         </a></li>
       <li class="nav-item"><a href="#" class="nav-link">
-          <!---->
-          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!--v-if-->
+          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
             <path d="M10 13l-1 2l1 2"></path>
             <path d="M14 13l1 2l-1 2"></path>
-          </svg>
-          Style
+          </svg>Style
         </a></li>
       <li class="d-flex align-items-center"><a href="#" class="ml-2 mr-n2 expand-collapse"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -51,11 +46,12 @@ exports[`VueExample renders correctly 1`] = `
     </ul>
   </div>
   <div class="card-body">
-    <!---->
-    <!---->
-    <!---->
-    <!---->
-    <p class="demo" file="test-component.vue" stripcomments="true" showlabels="true" showicons="true" startexpanded="true"><button class="btn-primary">(clicked - 0)</button></p>
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!-- This is a test comment inside the template part -->
+    <p class="demo" file="test-component.vue" stripcomments="true" showlabels="true" showicons="true" showloader="false" startexpanded="true"><button class="btn-primary">(clicked - 0)</button></p>
   </div>
 </div>
 `;
@@ -64,24 +60,21 @@ exports[`VueExample renders the script section 1`] = `
 <div class="card">
   <div class="card-header d-flex bg-white justify-content-between">
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link">
-          Example
-        </a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Example</a></li>
     </ul>
     <ul class="nav nav-pills justify-content-end">
-      <!---->
+      <!--v-if-->
       <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <polyline points="7 8 3 12 7 16"></polyline>
             <polyline points="17 8 21 12 17 16"></polyline>
             <line x1="14" y1="4" x2="10" y2="20"></line>
           </svg>
-          <!---->
-          <!---->
-          Template
+          <!--v-if-->
+          <!--v-if-->Template
         </a></li>
       <li class="nav-item"><a href="#" class="nav-link active">
-          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
@@ -89,19 +82,17 @@ exports[`VueExample renders the script section 1`] = `
             <line x1="9" y1="13" x2="15" y2="13"></line>
             <line x1="9" y1="17" x2="15" y2="17"></line>
           </svg>
-          <!---->
-          Script
+          <!--v-if-->Script
         </a></li>
       <li class="nav-item"><a href="#" class="nav-link">
-          <!---->
-          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!--v-if-->
+          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
             <path d="M10 13l-1 2l1 2"></path>
             <path d="M14 13l1 2l-1 2"></path>
-          </svg>
-          Style
+          </svg>Style
         </a></li>
       <li class="d-flex align-items-center"><a href="#" class="ml-2 mr-n2 expand-collapse"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -111,8 +102,8 @@ exports[`VueExample renders the script section 1`] = `
     </ul>
   </div>
   <div class="card-body">
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div>
       <div class="language-javascript"><pre class="language-javascript"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
@@ -132,8 +123,8 @@ exports[`VueExample renders the script section 1`] = `
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code></pre>
       </div>
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
   </div>
 </div>
 `;
@@ -142,24 +133,21 @@ exports[`VueExample renders the style section 1`] = `
 <div class="card">
   <div class="card-header d-flex bg-white justify-content-between">
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link">
-          Example
-        </a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Example</a></li>
     </ul>
     <ul class="nav nav-pills justify-content-end">
-      <!---->
+      <!--v-if-->
       <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <polyline points="7 8 3 12 7 16"></polyline>
             <polyline points="17 8 21 12 17 16"></polyline>
             <line x1="14" y1="4" x2="10" y2="20"></line>
           </svg>
-          <!---->
-          <!---->
-          Template
+          <!--v-if-->
+          <!--v-if-->Template
         </a></li>
       <li class="nav-item"><a href="#" class="nav-link">
-          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
@@ -167,19 +155,17 @@ exports[`VueExample renders the style section 1`] = `
             <line x1="9" y1="13" x2="15" y2="13"></line>
             <line x1="9" y1="17" x2="15" y2="17"></line>
           </svg>
-          <!---->
-          Script
+          <!--v-if-->Script
         </a></li>
       <li class="nav-item"><a href="#" class="nav-link active">
-          <!---->
-          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!--v-if-->
+          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
             <path d="M10 13l-1 2l1 2"></path>
             <path d="M14 13l1 2l-1 2"></path>
-          </svg>
-          Style
+          </svg>Style
         </a></li>
       <li class="d-flex align-items-center"><a href="#" class="ml-2 mr-n2 expand-collapse"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -189,9 +175,9 @@ exports[`VueExample renders the style section 1`] = `
     </ul>
   </div>
   <div class="card-body">
-    <!---->
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
     <div>
       <div class="language-css"><pre class="language-css"><code><span class="token selector">&lt;style scoped&gt;
 .btn-primary</span> <span class="token punctuation">{</span>
@@ -208,7 +194,7 @@ exports[`VueExample renders the style section 1`] = `
 &lt;/style&gt;</code></pre>
       </div>
     </div>
-    <!---->
+    <!--v-if-->
   </div>
 </div>
 `;
@@ -217,24 +203,21 @@ exports[`VueExample renders the template section 1`] = `
 <div class="card">
   <div class="card-header d-flex bg-white justify-content-between">
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link">
-          Example
-        </a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Example</a></li>
     </ul>
     <ul class="nav nav-pills justify-content-end">
-      <!---->
+      <!--v-if-->
       <li class="nav-item"><a href="#" class="nav-link active"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <polyline points="7 8 3 12 7 16"></polyline>
             <polyline points="17 8 21 12 17 16"></polyline>
             <line x1="14" y1="4" x2="10" y2="20"></line>
           </svg>
-          <!---->
-          <!---->
-          Template
+          <!--v-if-->
+          <!--v-if-->Template
         </a></li>
       <li class="nav-item"><a href="#" class="nav-link">
-          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
@@ -242,19 +225,17 @@ exports[`VueExample renders the template section 1`] = `
             <line x1="9" y1="13" x2="15" y2="13"></line>
             <line x1="9" y1="17" x2="15" y2="17"></line>
           </svg>
-          <!---->
-          Script
+          <!--v-if-->Script
         </a></li>
       <li class="nav-item"><a href="#" class="nav-link">
-          <!---->
-          <!----> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!--v-if-->
+          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
             <path d="M10 13l-1 2l1 2"></path>
             <path d="M14 13l1 2l-1 2"></path>
-          </svg>
-          Style
+          </svg>Style
         </a></li>
       <li class="d-flex align-items-center"><a href="#" class="ml-2 mr-n2 expand-collapse"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -264,7 +245,7 @@ exports[`VueExample renders the template section 1`] = `
     </ul>
   </div>
   <div class="card-body">
-    <!---->
+    <!--v-if-->
     <div>
       <div class="language-markup"><pre class="language-markup"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>demo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -273,9 +254,9 @@ exports[`VueExample renders the template section 1`] = `
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre>
       </div>
     </div>
-    <!---->
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
   </div>
 </div>
 `;
