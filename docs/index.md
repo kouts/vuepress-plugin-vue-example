@@ -1,7 +1,7 @@
 
 # vuepress-plugin-vue-example
 
-A Vuepress plugin to display Vue components\' live examples and source code inside documentation.
+A Vuepress plugin to display Vue components' live examples and source code inside documentation.
 
 ## Features
 
