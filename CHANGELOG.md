@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.3...v1.1.4) (2021-09-25)
+
+
+### Bug Fixes
+
+* docs links for next version ([35dcc27](https://github.com/kouts/vuepress-plugin-vue-example/commit/35dcc2705ef734b190ec616bd4d99a911f4bb842))
+
 ## [1.1.3](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.2...v1.1.3) (2021-09-24)
 
 
