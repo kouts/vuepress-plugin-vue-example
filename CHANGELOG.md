@@ -1,3 +1,20 @@
+# [2.0.0](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.3...v2.0.0) (2021-09-25)
+
+
+### Bug Fixes
+
+* fixed tests ([0546fd1](https://github.com/kouts/vuepress-plugin-vue-example/commit/0546fd1400f3f55adb9c7d03ad242341fc2305df))
+
+
+### Features
+
+* vue3 support ([498c5a8](https://github.com/kouts/vuepress-plugin-vue-example/commit/498c5a88c942645a3db9cc256a34350ea7b586a3))
+
+
+### BREAKING CHANGES
+
+* vue3 support
+
 ## [1.1.3](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.2...v1.1.3) (2021-09-24)
 
 
