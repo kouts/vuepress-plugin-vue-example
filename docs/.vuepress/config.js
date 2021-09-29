@@ -5,13 +5,7 @@ module.exports = {
     VueExamplePlugin({
       componentsPath: '/docs/.examples/'
     }),
-    [
-      '@vuepress/docsearch',
-      {
-        apiKey: '',
-        indexName: ''
-      }
-    ]
+    '@vuepress/plugin-search'
   ],
   dest: 'public',
   title: 'vuepress-plugin-vue-example',
