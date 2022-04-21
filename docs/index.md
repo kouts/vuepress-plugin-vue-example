@@ -3,6 +3,10 @@
 
 A Vuepress 2 plugin to display Vue components' live examples and source code inside documentation.
 
+::: warning
+This plugin only works using [Webpack as the bundler](https://v2.vuepress.vuejs.org/guide/bundler.html) for Vuepress 2.
+:::
+
 ## Features
 
 - Easy to use, with just a single `vue-example` tag inside `.md` or `.vue` files

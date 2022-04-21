@@ -3,6 +3,8 @@
 ---
 
 :fire: **HEADS UP!** You're currently looking at vuepress-plugin-vue-example `next` branch for **Vuepress 2**.  
+This plugin only works using [Webpack as the bundler](https://v2.vuepress.vuejs.org/guide/bundler.html) for Vuepress 2.  
+
 If you're looking for a Vuepress 1 compatible version of vuepress-plugin-vue-example, [please check out the `master` branch](https://github.com/kouts/vuepress-plugin-vue-example/tree/master).
 
 ---
