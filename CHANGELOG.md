@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.1...v2.0.2) (2022-04-21)
+
+
+### Bug Fixes
+
+* changed vuepress bundler to webpack ([1a57320](https://github.com/kouts/vuepress-plugin-vue-example/commit/1a57320d819f2ad70092bbaac6104eec79f06b34))
+
 ## [2.0.1](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.0...v2.0.1) (2021-09-25)
 
 
