@@ -1,3 +1,11 @@
+## [1.1.6](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.5...v1.1.6) (2022-05-07)
+
+
+### Bug Fixes
+
+* reverted deps ([31a19a1](https://github.com/kouts/vuepress-plugin-vue-example/commit/31a19a17130c0c4de0f4282f9f1910fc0c7b0fc2))
+* updated eslint config and npm packages ([832f579](https://github.com/kouts/vuepress-plugin-vue-example/commit/832f5796f6bf66a9f39d246e223a0fc92dbb0cc6))
+
 ## [1.1.5](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.4...v1.1.5) (2022-04-21)
 
 
