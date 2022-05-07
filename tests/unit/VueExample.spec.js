@@ -1,7 +1,7 @@
-import { waitNT, waitRAF } from '../utils'
-import { mount } from '@vue/test-utils'
 import VueExample from '@/VueExample'
 import { loadComponentAsString } from '@temp/loadComponent'
+import { mount } from '@vue/test-utils'
+import { waitNT, waitRAF } from '../utils'
 jest.mock('@temp/loadComponent')
 
 const countLines = (str) => str.split(/\r\n|\r|\n/).length
@@ -29,6 +29,7 @@ describe('VueExample', () => {
     await waitNT(wrapper.vm)
     await waitRAF()
     const div = wrapper.find('div.card')
+
     expect(div.exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
     // console.log(wrapper.html());
@@ -36,6 +37,7 @@ describe('VueExample', () => {
 
   it('parses the template SFC sections', () => {
     const parsed = wrapper.vm.parseSfcSection('template', contents)
+
     expect(countLines(parsed)).toBe(5)
     expect(parsed).toContain('<template>')
     expect(parsed).toContain('</template>')
@@ -47,6 +49,7 @@ describe('VueExample', () => {
 
   it('parses the script SFC sections', () => {
     const parsed = wrapper.vm.parseSfcSection('script', contents)
+
     expect(countLines(parsed)).toBe(16)
     expect(parsed).toContain('<script>')
     expect(parsed).toContain('</script>')
@@ -58,6 +61,7 @@ describe('VueExample', () => {
 
   it('parses the style SFC sections', () => {
     const parsed = wrapper.vm.parseSfcSection('style', contents)
+
     expect(countLines(parsed)).toBe(13)
     expect(parsed).toContain('<style')
     expect(parsed).toContain('</style>')
@@ -75,6 +79,7 @@ describe('VueExample', () => {
     </template>
     `
     const removed = wrapper.vm.removeComments('template', str)
+
     expect(removed).not.toContain('<!-- This is a comment -->')
   })
 
@@ -87,6 +92,7 @@ describe('VueExample', () => {
     </script>
     `
     const removed = wrapper.vm.removeComments('script', str)
+
     expect(removed).not.toContain('// This is a comment')
   })
 
@@ -100,6 +106,7 @@ describe('VueExample', () => {
     </style>
     `
     const removed = wrapper.vm.removeComments('script', str)
+
     expect(removed).not.toContain('// This is a comment')
   })
 
@@ -107,6 +114,7 @@ describe('VueExample', () => {
     await waitNT(wrapper.vm)
     await waitRAF()
     const p = wrapper.find('p.demo')
+
     expect(p.exists()).toBe(true)
   })
 
@@ -115,6 +123,7 @@ describe('VueExample', () => {
     await waitNT(wrapper.vm)
     await waitRAF()
     const pre = wrapper.find('pre.language-markup')
+
     expect(pre.exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -124,6 +133,7 @@ describe('VueExample', () => {
     await waitNT(wrapper.vm)
     await waitRAF()
     const pre = wrapper.find('pre.language-javascript')
+
     expect(pre.exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -133,16 +143,19 @@ describe('VueExample', () => {
     await waitNT(wrapper.vm)
     await waitRAF()
     const pre = wrapper.find('pre.language-css')
+
     expect(pre.exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('renders the title of the example section', async () => {
     const title = 'My custom example title'
+
     wrapper.setProps({ title })
     await waitNT(wrapper.vm)
     await waitRAF()
     const a = wrapper.find('a.nav-link')
+
     expect(a.exists()).toBe(true)
     expect(a.text()).toContain(title)
   })
@@ -154,6 +167,7 @@ describe('VueExample', () => {
     const templateLink = wrapper.findAll('ul.nav.nav-pills.justify-content-end li.nav-item a').at(0)
     const scriptLink = wrapper.findAll('ul.nav.nav-pills.justify-content-end li.nav-item a').at(1)
     const styleLink = wrapper.findAll('ul.nav.nav-pills.justify-content-end li.nav-item a').at(2)
+
     expect(templateLink.text()).not.toContain('Template')
     expect(scriptLink.text()).not.toContain('Script')
     expect(styleLink.text()).not.toContain('Style')
@@ -164,6 +178,7 @@ describe('VueExample', () => {
     await waitNT(wrapper.vm)
     await waitRAF()
     const svgIcons = wrapper.findAll('ul.nav.nav-pills.justify-content-end li.nav-item svg')
+
     expect(svgIcons.length).toBe(0)
   })
 
@@ -175,6 +190,7 @@ describe('VueExample', () => {
       }
     })
     const loader = wrapperWithLoader.find('div.loader')
+
     expect(loader.exists()).toBe(true)
   })
 
@@ -185,11 +201,13 @@ describe('VueExample', () => {
         stripComments: false
       }
     })
+
     // Comments in template
     wrapperWithComments.setData({ sectionSelected: 'template' })
     await waitNT(wrapperWithComments.vm)
     await waitRAF()
     let pre = wrapperWithComments.find('pre.language-markup')
+
     expect(pre.text()).toContain('This is a test comment inside the template part')
     // Comments in script
     wrapperWithComments.setData({ sectionSelected: 'script' })
@@ -210,6 +228,7 @@ describe('VueExample', () => {
     await waitNT(wrapper.vm)
     await waitRAF()
     const cardBody = wrapper.find('div.card-body')
+
     expect(cardBody.attributes().style).toBe('display: none;')
     wrapper.setData({ expanded: true })
     await waitNT(wrapper.vm)
