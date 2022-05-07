@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.2...v2.0.3) (2022-05-07)
+
+
+### Bug Fixes
+
+* updated eslint config and npm packages ([5158c4e](https://github.com/kouts/vuepress-plugin-vue-example/commit/5158c4e3db0172eafbef73008493c5cec6e3feb6))
+
 ## [2.0.2](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.1...v2.0.2) (2022-04-21)
 
 
