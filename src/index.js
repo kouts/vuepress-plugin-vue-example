@@ -10,6 +10,7 @@ module.exports = (options, context) => ({
       },
       options
     )
+
     return {
       name: 'loadComponent.js',
       content: `
