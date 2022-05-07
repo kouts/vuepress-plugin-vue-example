@@ -1,6 +1,6 @@
-import { shallowMount } from '@vue/test-utils'
-import VueExampleHighlight from '@/VueExampleHighlight'
 import Prism from 'prismjs'
+import VueExampleHighlight from '@/VueExampleHighlight'
+import { shallowMount } from '@vue/test-utils'
 jest.mock('prismjs')
 Prism.highlight = jest.fn((code) => code)
 
@@ -17,6 +17,7 @@ describe('VueExampleHighlight', () => {
     const div = wrapper.find(`div.language-${wrapper.props().language}`)
     const pre = wrapper.find(`pre.language-${wrapper.props().language}`)
     const code = wrapper.find('code')
+
     expect(div.exists()).toBe(true)
     expect(pre.exists()).toBe(true)
     expect(code.exists()).toBe(true)
@@ -28,6 +29,7 @@ describe('VueExampleHighlight', () => {
     const wrapper = shallowMount(VueExampleHighlight, {
       props
     })
+
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

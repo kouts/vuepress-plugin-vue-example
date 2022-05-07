@@ -10,6 +10,7 @@ module.exports = (options, appContext) => ({
       },
       options
     )
+
     await app.writeTemp(
       'loadComponent.js',
       `

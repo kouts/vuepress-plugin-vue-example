@@ -36,12 +36,14 @@ export default {
   },
   data: function () {
     const sortOrders = {}
+
     this.columns.forEach(function (key) {
       sortOrders[key] = 1
     })
+
     return {
       sortKey: '',
-      sortOrders: sortOrders
+      sortOrders
     }
   },
   computed: {
@@ -50,6 +52,7 @@ export default {
       const filterKey = this.filterKey && this.filterKey.toLowerCase()
       const order = this.sortOrders[sortKey] || 1
       let heroes = this.heroes
+
       if (filterKey) {
         heroes = heroes.filter(function (row) {
           return Object.keys(row).some(function (key) {
@@ -61,9 +64,11 @@ export default {
         heroes = heroes.slice().sort(function (a, b) {
           a = a[sortKey]
           b = b[sortKey]
+
           return (a === b ? 0 : a > b ? 1 : -1) * order
         })
       }
+
       return heroes
     }
   },
