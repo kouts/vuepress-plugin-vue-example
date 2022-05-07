@@ -116,8 +116,8 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import { loadComponent, loadComponentAsString } from '@dynamic/loadComponent'
 import VueExampleHighlight from './VueExampleHighlight'
+import { loadComponent, loadComponentAsString } from '@dynamic/loadComponent'
 
 export default {
   name: 'SourceView',
@@ -176,6 +176,7 @@ export default {
     createSections() {
       loadComponentAsString(this.$props.file).then((contents) => {
         const sections = []
+
         sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })
         sections.push({
           name: 'template',
@@ -198,6 +199,7 @@ export default {
       const regex = new RegExp(string, 'g')
       const parsed = regex.exec(contents) || []
       const str = parsed[1] || ''
+
       return this.stripComments ? this.removeComments(tag, str) : str
     },
     removeComments(tag, str) {
@@ -211,6 +213,7 @@ export default {
         // Remove more than one line breaks
         const EOL = str.match(/\r\n/gm) ? '\r\n' : '\n'
         const regExp = new RegExp('(' + EOL + '){3,}', 'gm')
+
         str = str.replace(regExp, EOL + EOL)
       }
       if (tag === 'style') {
@@ -218,6 +221,7 @@ export default {
         // Remove all extra line breaks
         str = str.replace(/^\s*[\r\n]/gm, '')
       }
+
       return str
     }
   }

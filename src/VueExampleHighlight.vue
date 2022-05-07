@@ -21,6 +21,7 @@ export default {
   },
   mounted: function () {
     const code = document.createElement('code')
+
     code.innerHTML = Prism.highlight(this.$props.code, Prism.languages[this.$props.language], this.$props.language)
     this.$refs.code.appendChild(code)
   }
