@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.3...v2.0.4) (2022-07-17)
+
+
+### Bug Fixes
+
+* fixed compatibility with vuepress-webpack 2.0.0-beta.49 ([6cb0a2a](https://github.com/kouts/vuepress-plugin-vue-example/commit/6cb0a2ae944fcac1055d7b94a8c04d1e4bfa2cf2))
+
 ## [2.0.3](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.2...v2.0.3) (2022-05-07)
 
 
