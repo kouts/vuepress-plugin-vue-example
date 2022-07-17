@@ -105,6 +105,15 @@ blockquote p {color: #777;}
   padding: 0;
 }
 
+/* Fix navbar links */
+.theme-container .navbar a:hover {
+  text-decoration: none;
+}
+
+.theme-container .navbar .navbar-items a:hover {
+  border-bottom: none;
+}
+
 /* Fix stripped table rows colors */
 .table.table-striped tr:nth-child(2n) {
   background-color: #f6f8fa;
