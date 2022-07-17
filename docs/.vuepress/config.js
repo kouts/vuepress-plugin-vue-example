@@ -13,7 +13,8 @@ module.exports = {
   themeConfig: {
     contributors: false,
     repo: 'https://github.com/kouts/vuepress-plugin-vue-example/tree/next',
-    darkMode: false,
+    colorMode: 'light',
+    colorModeSwitch: false,
     sidebar: [
       {
         link: '/',
