@@ -21,9 +21,8 @@ This plugin only works using [Webpack as the bundler](https://v2.vuepress.vuejs.
 
 | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)<br/>Edge | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)<br/>Firefox | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)<br/>Chrome | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)<br/>Safari | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png)<br/>Opera |
 | --------- | --------- | --------- | --------- | --------- |
-| Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
+| last 2 versions | last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 ## Demo
-<br />
 
 <Example1 />

@@ -32,5 +32,5 @@ module.exports = (options, appContext) => ({
     `
     )
   },
-  clientAppEnhanceFiles: [path.resolve(__dirname, 'clientAppEnhanceFiles.js')]
+  clientConfigFile: path.resolve(__dirname, 'client.js')
 })
