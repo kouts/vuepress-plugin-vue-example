@@ -24,6 +24,5 @@ This plugin only works using [Webpack as the bundler](https://v2.vuepress.vuejs.
 | last 2 versions | last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 ## Demo
-<br />
 
 <Example1 />

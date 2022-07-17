@@ -81,7 +81,7 @@ blockquote p {color: #777;}
 }
 
 /* Fix links appearance */
-.dataset-page .theme-default-content:not(.custom) ul.pagination a:hover {
+.theme-default-content:not(.custom) ul.pagination a:hover {
   text-decoration: none;
 }
 
@@ -91,11 +91,11 @@ blockquote p {color: #777;}
 }
 
 /* Fix margin-bottom for headers */
-.theme-container .theme-default-content:not(.custom) > h2, 
-.theme-container .theme-default-content:not(.custom) > h3, 
-.theme-container .theme-default-content:not(.custom) > h4, 
-.theme-container .theme-default-content:not(.custom) > h5, 
-.theme-container .theme-default-content:not(.custom) > h6 {
+.theme-container .theme-default-content:not(.custom) h2, 
+.theme-container .theme-default-content:not(.custom) h3, 
+.theme-container .theme-default-content:not(.custom) h4, 
+.theme-container .theme-default-content:not(.custom) h5, 
+.theme-container .theme-default-content:not(.custom) h6 {
   margin-bottom: 1rem !important;
 }
 
@@ -108,6 +108,11 @@ blockquote p {color: #777;}
 /* Fix stripped table rows colors */
 .table.table-striped tr:nth-child(2n) {
   background-color: #f6f8fa;
+}
+
+/* Fix warning alert padding */
+.custom-container.warning {
+  padding-top: 1rem;
 }
 
 /* Fix headings font-size */
