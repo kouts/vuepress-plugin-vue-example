@@ -1,16 +1,20 @@
 const VueExamplePlugin = require('../../src/index.js')
+const { defaultTheme } = require('vuepress-webpack')
+const { searchPlugin } = require('@vuepress/plugin-search')
 
 module.exports = {
   plugins: [
     VueExamplePlugin({
       componentsPath: '/docs/.examples/'
     }),
-    '@vuepress/plugin-search'
+    searchPlugin({
+      // options
+    })
   ],
   dest: 'public',
   title: 'vuepress-plugin-vue-example',
   description: "A Vuepress 2 plugin to display Vue components' live examples and source code inside documentation.",
-  themeConfig: {
+  theme: defaultTheme({
     contributors: false,
     repo: 'https://github.com/kouts/vuepress-plugin-vue-example/tree/next',
     colorMode: 'light',
@@ -29,5 +33,5 @@ module.exports = {
         text: 'Options'
       }
     ]
-  }
+  })
 }
