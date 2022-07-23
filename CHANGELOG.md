@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.6...v1.1.7) (2022-07-23)
+
+
+### Bug Fixes
+
+* updated node and npm packages ([dd02b07](https://github.com/kouts/vuepress-plugin-vue-example/commit/dd02b072ecf501b88960e34d673d8e569dddfc85))
+
 ## [1.1.6](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.5...v1.1.6) (2022-05-07)
 
 
