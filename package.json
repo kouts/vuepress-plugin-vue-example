@@ -31,8 +31,8 @@
     "raw-loader": "^4.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@vue/cli-plugin-unit-jest": "^5.0.8",
@@ -41,7 +41,7 @@
     "@vue/test-utils": "^2.0.2",
     "@vue/vue3-jest": "^27.0.0",
     "@vuepress/plugin-search": "^2.0.0-beta.49",
-    "bootstrap": "^4.6.1",
+    "bootstrap": "^4.6.2",
     "eslint": "^8.20.0",
     "eslint-config-kouts": "^2.2.0",
     "eslint-config-prettier": "^8.5.0",
@@ -58,7 +58,7 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prismjs": "^1.28.0",
-    "sass": "^1.53.0",
+    "sass": "^1.54.0",
     "sass-loader": "^13.0.2",
     "vue": "^3.2.37",
     "vue-loader": "^17.0.0",
