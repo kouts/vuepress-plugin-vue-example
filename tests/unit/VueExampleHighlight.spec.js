@@ -1,6 +1,7 @@
 import Prism from 'prismjs'
 import VueExampleHighlight from '@/VueExampleHighlight'
 import { shallowMount } from '@vue/test-utils'
+
 jest.mock('prismjs')
 Prism.highlight = jest.fn((code) => code)
 
