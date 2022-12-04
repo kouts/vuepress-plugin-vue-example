@@ -2,6 +2,7 @@ import VueExample from '@/VueExample'
 import { loadComponentAsString } from '@temp/loadComponent'
 import { mount } from '@vue/test-utils'
 import { waitNT, waitRAF } from '../utils'
+
 jest.mock('@temp/loadComponent')
 
 const countLines = (str) => str.split(/\r\n|\r|\n/).length

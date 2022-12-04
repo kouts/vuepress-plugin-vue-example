@@ -1,6 +1,8 @@
-const path = require('path')
+import { getDirname, path } from '@vuepress/utils'
 
-module.exports = (options, appContext) => ({
+const __dirname = getDirname(import.meta.url)
+
+export default (options, appContext) => ({
   name: 'vue-example',
   async onPrepared(app) {
     const opts = Object.assign(
