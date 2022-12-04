@@ -1,8 +1,8 @@
-const VueExamplePlugin = require('../../src/index.js')
-const { defaultTheme } = require('vuepress-webpack')
-const { searchPlugin } = require('@vuepress/plugin-search')
+import VueExamplePlugin from '../../src/index.js'
+import { defaultTheme, defineUserConfig } from 'vuepress-webpack'
+import { searchPlugin } from '@vuepress/plugin-search'
 
-module.exports = {
+export default defineUserConfig({
   plugins: [
     VueExamplePlugin({
       componentsPath: '/docs/.examples/'
@@ -34,4 +34,4 @@ module.exports = {
       }
     ]
   })
-}
+})
