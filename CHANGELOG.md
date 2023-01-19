@@ -1,3 +1,12 @@
+## [2.0.7](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.6...v2.0.7) (2023-01-19)
+
+
+### Bug Fixes
+
+* added type module in package.json ([67bdae6](https://github.com/kouts/vuepress-plugin-vue-example/commit/67bdae62be00a6621321a3ce34252e521775f2ef))
+* added type module to package.json ([d3269e3](https://github.com/kouts/vuepress-plugin-vue-example/commit/d3269e30fc45ae0f607c209b7dfad19405826015))
+* revert type module change ([8d7d6d3](https://github.com/kouts/vuepress-plugin-vue-example/commit/8d7d6d3d777221af36810f62b5cc6d8d2b2ce873))
+
 ## [2.0.6](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.5...v2.0.6) (2022-12-04)
 
 
