@@ -1,3 +1,10 @@
+## [2.0.8](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.7...v2.0.8) (2023-06-04)
+
+
+### Bug Fixes
+
+* switched to new plugin format ([7e60e98](https://github.com/kouts/vuepress-plugin-vue-example/commit/7e60e9847ae907f1438b00d02b36fb4bafa02874))
+
 ## [2.0.7](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.6...v2.0.7) (2023-01-19)
 
 
