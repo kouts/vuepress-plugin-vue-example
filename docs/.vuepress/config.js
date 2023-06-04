@@ -1,10 +1,10 @@
-import VueExamplePlugin from '../../src/index.js'
 import { defaultTheme, defineUserConfig } from 'vuepress-webpack'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { vueExamplePlugin } from '../../src/index.js'
 
 export default defineUserConfig({
   plugins: [
-    VueExamplePlugin({
+    vueExamplePlugin({
       componentsPath: '/docs/.examples/'
     }),
     searchPlugin({
