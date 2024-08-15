@@ -20,40 +20,34 @@
     "src"
   ],
   "scripts": {
+    "dev": "vuepress dev docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test:unit": "vue-cli-service test:unit",
-    "watch": "vuepress dev docs",
     "lint": "eslint . --ext .js,.vue",
     "lint-fix": "eslint . --fix --ext .js,.vue",
     "prepare": "husky install"
   },
-  "dependencies": {
-    "raw-loader": "^4.0.2"
-  },
   "devDependencies": {
-    "@babel/core": "^7.22.1",
-    "@babel/preset-env": "^7.22.4",
-    "@commitlint/cli": "^17.6.5",
-    "@commitlint/config-conventional": "^17.6.5",
-    "@kouts/eslint-config": "^0.0.13",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@kouts/eslint-config": "^0.0.15",
     "@vue/cli-plugin-unit-jest": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "@vue/compiler-sfc": "^3.3.4",
-    "@vue/test-utils": "^2.3.2",
-    "@vue/vue3-jest": "^27.0.0",
-    "@vuepress/plugin-search": "2.0.0-beta.62",
-    "bootstrap": "^4.6.2",
-    "eslint": "^8.42.0",
+    "@vue/compiler-sfc": "^3.4.38",
+    "@vue/test-utils": "^2.4.6",
+    "@vuepress/bundler-vite": "2.0.0-rc.14",
+    "@vuepress/client": "2.0.0-rc.2",
+    "@vuepress/plugin-search": "2.0.0-rc.41",
+    "@vuepress/theme-default": "2.0.0-rc.41",
+    "eslint": "^8.57.0",
     "husky": "^8.0.3",
     "jest-raw-loader": "^1.0.1",
-    "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
     "prismjs": "^1.29.0",
     "sass": "^1.62.1",
-    "sass-loader": "^13.3.1",
-    "vue": "^3.3.4",
-    "vue-loader": "^17.2.2",
-    "vuepress-webpack": "2.0.0-beta.62"
+    "vue": "^3.4.38",
+    "vuepress": "2.0.0-rc.14"
   }
 }

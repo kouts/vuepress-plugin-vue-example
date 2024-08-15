@@ -1,19 +1,11 @@
-import { defaultTheme, defineUserConfig } from 'vuepress-webpack'
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
 import { searchPlugin } from '@vuepress/plugin-search'
-import { vueExamplePlugin } from '../../src/index.js'
+import { viteBundler } from '@vuepress/bundler-vite'
+// import { vueExamplePlugin } from '../../src/index.js'
 
 export default defineUserConfig({
-  plugins: [
-    vueExamplePlugin({
-      componentsPath: '/docs/.examples/'
-    }),
-    searchPlugin({
-      // options
-    })
-  ],
-  dest: 'public',
-  title: 'vuepress-plugin-vue-example',
-  description: "A Vuepress 2 plugin to display Vue components' live examples and source code inside documentation.",
+  bundler: viteBundler(),
   theme: defaultTheme({
     contributors: false,
     repo: 'https://github.com/kouts/vuepress-plugin-vue-example/tree/next',
@@ -33,5 +25,18 @@ export default defineUserConfig({
         text: 'Options'
       }
     ]
-  })
+  }),
+  plugins: [
+    /*
+    vueExamplePlugin({
+      componentsPath: '/docs/.examples/'
+    }),
+    */
+    searchPlugin({
+      // options
+    })
+  ],
+  dest: 'public',
+  title: 'vuepress-plugin-vue-example',
+  description: "A Vuepress 2 plugin to display Vue components' live examples and source code inside documentation."
 })
