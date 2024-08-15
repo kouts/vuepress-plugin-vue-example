@@ -163,9 +163,9 @@ export default {
       expanded: true
     }
   },
-  created() {
-    this.createComponent()
-    // this.createSections()
+  async created() {
+    await this.createComponent()
+    await this.createSections()
     this.expanded = this.startExpanded
   },
   methods: {
@@ -174,26 +174,28 @@ export default {
 
       this.component = markRaw(res)
     },
-    createSections() {
-      loadComponentAsString(this.$props.file).then((contents) => {
-        const sections = []
+    async createSections() {
+      const res = await loadComponentAsString(this.$props.file)
 
-        sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })
-        sections.push({
-          name: 'template',
-          label: 'Template',
-          contents: this.parseSfcSection('template', contents),
-          language: 'markup'
-        })
-        sections.push({
-          name: 'script',
-          label: 'Script',
-          contents: this.parseSfcSection('script', contents),
-          language: 'javascript'
-        })
-        sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' })
-        this.sections = sections.filter((s) => s.contents)
+      const contents = res.default
+
+      const sections = []
+
+      sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })
+      sections.push({
+        name: 'template',
+        label: 'Template',
+        contents: this.parseSfcSection('template', contents),
+        language: 'markup'
       })
+      sections.push({
+        name: 'script',
+        label: 'Script',
+        contents: this.parseSfcSection('script', contents),
+        language: 'javascript'
+      })
+      sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' })
+      this.sections = sections.filter((s) => s.contents)
     },
     parseSfcSection(tag, contents) {
       const string = `(<${tag}(.*)?>[\\w\\W]*<\\/${tag}>)`

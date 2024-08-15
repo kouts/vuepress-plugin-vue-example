@@ -22,14 +22,11 @@ export const vueExamplePlugin = (options) => {
               }
             }
             export function loadComponentAsString (file) {
-              /*
               try {
-                return import('${opts.componentsPath}' + file + '.vue?raw')
+                return import(/* @vite-ignore */ '${opts.componentsPath}' + file + '.vue?raw')
               } catch (err) {
                 console.log(err);
               }
-              */
-              return 'test';
             }
           `
         )
