@@ -41,6 +41,9 @@ importers:
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.41
         version: 2.0.0-rc.41(typescript@5.5.4)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.3.0)(jiti@1.21.6)(sass@1.77.8)(terser@5.31.6)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)(vue@3.4.38(typescript@5.5.4)))
+      '@vuepress/utils':
+        specifier: 2.0.0-rc.14
+        version: 2.0.0-rc.14
       eslint:
         specifier: ^8.57.0
         version: 8.57.0

@@ -116,7 +116,7 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import VueExampleHighlight from './VueExampleHighlight'
+import VueExampleHighlight from './VueExampleHighlight.vue'
 import { loadComponent, loadComponentAsString } from '@temp/loadComponent'
 import { markRaw } from 'vue'
 
@@ -165,14 +165,14 @@ export default {
   },
   created() {
     this.createComponent()
-    this.createSections()
+    // this.createSections()
     this.expanded = this.startExpanded
   },
   methods: {
-    createComponent() {
-      loadComponent(this.$props.file).then((component) => {
-        this.component = markRaw(component)
-      })
+    async createComponent() {
+      const res = await loadComponent(this.$props.file)
+
+      this.component = markRaw(res)
     },
     createSections() {
       loadComponentAsString(this.$props.file).then((contents) => {

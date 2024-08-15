@@ -2,7 +2,10 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { viteBundler } from '@vuepress/bundler-vite'
-// import { vueExamplePlugin } from '../../src/index.js'
+import { vueExamplePlugin } from '../../src/index.js'
+import { fileURLToPath } from 'url'
+
+const examplesDir = fileURLToPath(new URL('../', import.meta.url)) + '.examples/'
 
 export default defineUserConfig({
   bundler: viteBundler(),
@@ -27,11 +30,9 @@ export default defineUserConfig({
     ]
   }),
   plugins: [
-    /*
     vueExamplePlugin({
-      componentsPath: '/docs/.examples/'
+      componentsPath: examplesDir
     }),
-    */
     searchPlugin({
       // options
     })
