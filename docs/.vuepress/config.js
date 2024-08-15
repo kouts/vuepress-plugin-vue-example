@@ -5,7 +5,7 @@ import { searchPlugin } from '@vuepress/plugin-search'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { vueExamplePlugin } from '../../src/index.js'
 
-const examplesDir = fileURLToPath(new URL('../', import.meta.url)) + '.examples/'
+const examplesDir = fileURLToPath(new URL('../.examples/', import.meta.url))
 
 export default defineUserConfig({
   bundler: viteBundler(),
