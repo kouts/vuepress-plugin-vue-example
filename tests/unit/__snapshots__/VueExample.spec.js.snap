@@ -1,124 +1,78 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`VueExample renders correctly 1`] = `
-<div class="card">
-  <div class="card-header d-flex bg-white justify-content-between">
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link active">Example</a></li>
-    </ul>
-    <ul class="nav nav-pills justify-content-end">
-      <!--v-if-->
-      <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <polyline points="7 8 3 12 7 16"></polyline>
-            <polyline points="17 8 21 12 17 16"></polyline>
-            <line x1="14" y1="4" x2="10" y2="20"></line>
-          </svg>
-          <!--v-if-->
-          <!--v-if-->Template
-        </a></li>
-      <li class="nav-item"><a href="#" class="nav-link">
-          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-            <line x1="9" y1="9" x2="10" y2="9"></line>
-            <line x1="9" y1="13" x2="15" y2="13"></line>
-            <line x1="9" y1="17" x2="15" y2="17"></line>
-          </svg>
-          <!--v-if-->Script
-        </a></li>
-      <li class="nav-item"><a href="#" class="nav-link">
-          <!--v-if-->
-          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-            <path d="M10 13l-1 2l1 2"></path>
-            <path d="M14 13l1 2l-1 2"></path>
-          </svg>Style
-        </a></li>
-      <li class="d-flex align-items-center"><a href="#" class="ml-2 mr-n2 expand-collapse"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M9 10l3 -3l3 3"></path>
-            <path d="M9 14l3 3l3 -3"></path>
-          </svg></a></li>
-    </ul>
+exports[`VueExample > renders correctly 1`] = `
+"<div data-v-54d51888="" class="card">
+  <!--v-if-->
+  <div data-v-54d51888="" class="card-body">
+    <!---->
   </div>
-  <div class="card-body">
-    <!--v-if-->
-    <!--v-if-->
-    <!--v-if-->
-    <!--v-if-->
-    <!-- This is a test comment inside the template part -->
-    <p class="demo" file="test-component.vue" stripcomments="true" showlabels="true" showicons="true" showloader="false" startexpanded="true"><button class="btn-primary">(clicked - 0)</button></p>
-  </div>
-</div>
+</div>"
 `;
 
-exports[`VueExample renders the script section 1`] = `
-<div class="card">
-  <div class="card-header d-flex bg-white justify-content-between">
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link">Example</a></li>
+exports[`VueExample > renders the script section 1`] = `
+"<div data-v-54d51888="" class="card">
+  <div data-v-54d51888="" class="card-header d-flex bg-white justify-content-between">
+    <ul data-v-54d51888="" class="nav nav-pills">
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">Example</a></li>
     </ul>
-    <ul class="nav nav-pills justify-content-end">
+    <ul data-v-54d51888="" class="nav nav-pills justify-content-end">
       <!--v-if-->
-      <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <polyline points="7 8 3 12 7 16"></polyline>
-            <polyline points="17 8 21 12 17 16"></polyline>
-            <line x1="14" y1="4" x2="10" y2="20"></line>
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link"><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path data-v-54d51888="" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <polyline data-v-54d51888="" points="7 8 3 12 7 16"></polyline>
+            <polyline data-v-54d51888="" points="17 8 21 12 17 16"></polyline>
+            <line data-v-54d51888="" x1="14" y1="4" x2="10" y2="20"></line>
           </svg>
           <!--v-if-->
           <!--v-if-->Template
         </a></li>
-      <li class="nav-item"><a href="#" class="nav-link active">
-          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-            <line x1="9" y1="9" x2="10" y2="9"></line>
-            <line x1="9" y1="13" x2="15" y2="13"></line>
-            <line x1="9" y1="17" x2="15" y2="17"></line>
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link active">
+          <!--v-if--><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" data-v-54d51888=""></path>
+            <path d="M14 3v4a1 1 0 0 0 1 1h4" data-v-54d51888=""></path>
+            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" data-v-54d51888=""></path>
+            <line x1="9" y1="9" x2="10" y2="9" data-v-54d51888=""></line>
+            <line x1="9" y1="13" x2="15" y2="13" data-v-54d51888=""></line>
+            <line x1="9" y1="17" x2="15" y2="17" data-v-54d51888=""></line>
           </svg>
           <!--v-if-->Script
         </a></li>
-      <li class="nav-item"><a href="#" class="nav-link">
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">
           <!--v-if-->
-          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-            <path d="M10 13l-1 2l1 2"></path>
-            <path d="M14 13l1 2l-1 2"></path>
+          <!--v-if--><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" data-v-54d51888=""></path>
+            <path d="M14 3v4a1 1 0 0 0 1 1h4" data-v-54d51888=""></path>
+            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" data-v-54d51888=""></path>
+            <path d="M10 13l-1 2l1 2" data-v-54d51888=""></path>
+            <path d="M14 13l1 2l-1 2" data-v-54d51888=""></path>
           </svg>Style
         </a></li>
-      <li class="d-flex align-items-center"><a href="#" class="ml-2 mr-n2 expand-collapse"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M9 10l3 -3l3 3"></path>
-            <path d="M9 14l3 3l3 -3"></path>
+      <li data-v-54d51888="" class="d-flex align-items-center"><a data-v-54d51888="" href="#" class="ml-2 mr-n2 expand-collapse leading-none"><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path data-v-54d51888="" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path data-v-54d51888="" d="M9 10l3 -3l3 3"></path>
+            <path data-v-54d51888="" d="M9 14l3 3l3 -3"></path>
           </svg></a></li>
     </ul>
   </div>
-  <div class="card-body">
+  <div data-v-54d51888="" class="card-body">
     <!--v-if-->
     <!--v-if-->
-    <div>
-      <div class="language-javascript"><pre class="language-javascript"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <div data-v-54d51888="">
+      <div data-v-e6ee2242="" data-v-54d51888="" class="language-javascript"><pre data-v-e6ee2242="" class="language-javascript"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'TestComponentText'</span><span class="token punctuation">,</span>
   
   <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span>
-      <span class="token literal-property property">count</span><span class="token operator">:</span> <span class="token number">0</span>
+      <span class="token literal-property property">count</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span>
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'clicked'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code></pre>
       </div>
@@ -126,60 +80,60 @@ exports[`VueExample renders the script section 1`] = `
     <!--v-if-->
     <!--v-if-->
   </div>
-</div>
+</div>"
 `;
 
-exports[`VueExample renders the style section 1`] = `
-<div class="card">
-  <div class="card-header d-flex bg-white justify-content-between">
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link">Example</a></li>
+exports[`VueExample > renders the style section 1`] = `
+"<div data-v-54d51888="" class="card">
+  <div data-v-54d51888="" class="card-header d-flex bg-white justify-content-between">
+    <ul data-v-54d51888="" class="nav nav-pills">
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">Example</a></li>
     </ul>
-    <ul class="nav nav-pills justify-content-end">
+    <ul data-v-54d51888="" class="nav nav-pills justify-content-end">
       <!--v-if-->
-      <li class="nav-item"><a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <polyline points="7 8 3 12 7 16"></polyline>
-            <polyline points="17 8 21 12 17 16"></polyline>
-            <line x1="14" y1="4" x2="10" y2="20"></line>
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link"><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path data-v-54d51888="" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <polyline data-v-54d51888="" points="7 8 3 12 7 16"></polyline>
+            <polyline data-v-54d51888="" points="17 8 21 12 17 16"></polyline>
+            <line data-v-54d51888="" x1="14" y1="4" x2="10" y2="20"></line>
           </svg>
           <!--v-if-->
           <!--v-if-->Template
         </a></li>
-      <li class="nav-item"><a href="#" class="nav-link">
-          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-            <line x1="9" y1="9" x2="10" y2="9"></line>
-            <line x1="9" y1="13" x2="15" y2="13"></line>
-            <line x1="9" y1="17" x2="15" y2="17"></line>
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">
+          <!--v-if--><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" data-v-54d51888=""></path>
+            <path d="M14 3v4a1 1 0 0 0 1 1h4" data-v-54d51888=""></path>
+            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" data-v-54d51888=""></path>
+            <line x1="9" y1="9" x2="10" y2="9" data-v-54d51888=""></line>
+            <line x1="9" y1="13" x2="15" y2="13" data-v-54d51888=""></line>
+            <line x1="9" y1="17" x2="15" y2="17" data-v-54d51888=""></line>
           </svg>
           <!--v-if-->Script
         </a></li>
-      <li class="nav-item"><a href="#" class="nav-link active">
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link active">
           <!--v-if-->
-          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-            <path d="M10 13l-1 2l1 2"></path>
-            <path d="M14 13l1 2l-1 2"></path>
+          <!--v-if--><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" data-v-54d51888=""></path>
+            <path d="M14 3v4a1 1 0 0 0 1 1h4" data-v-54d51888=""></path>
+            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" data-v-54d51888=""></path>
+            <path d="M10 13l-1 2l1 2" data-v-54d51888=""></path>
+            <path d="M14 13l1 2l-1 2" data-v-54d51888=""></path>
           </svg>Style
         </a></li>
-      <li class="d-flex align-items-center"><a href="#" class="ml-2 mr-n2 expand-collapse"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M9 10l3 -3l3 3"></path>
-            <path d="M9 14l3 3l3 -3"></path>
+      <li data-v-54d51888="" class="d-flex align-items-center"><a data-v-54d51888="" href="#" class="ml-2 mr-n2 expand-collapse leading-none"><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path data-v-54d51888="" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path data-v-54d51888="" d="M9 10l3 -3l3 3"></path>
+            <path data-v-54d51888="" d="M9 14l3 3l3 -3"></path>
           </svg></a></li>
     </ul>
   </div>
-  <div class="card-body">
+  <div data-v-54d51888="" class="card-body">
     <!--v-if-->
     <!--v-if-->
     <!--v-if-->
-    <div>
-      <div class="language-css"><pre class="language-css"><code><span class="token selector">&lt;style scoped&gt;
+    <div data-v-54d51888="">
+      <div data-v-e6ee2242="" data-v-54d51888="" class="language-css"><pre data-v-e6ee2242="" class="language-css"><code><span class="token selector">&lt;style scoped&gt;
 .btn-primary</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 1.2rem<span class="token punctuation">;</span>
@@ -196,58 +150,58 @@ exports[`VueExample renders the style section 1`] = `
     </div>
     <!--v-if-->
   </div>
-</div>
+</div>"
 `;
 
-exports[`VueExample renders the template section 1`] = `
-<div class="card">
-  <div class="card-header d-flex bg-white justify-content-between">
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link">Example</a></li>
+exports[`VueExample > renders the template section 1`] = `
+"<div data-v-54d51888="" class="card">
+  <div data-v-54d51888="" class="card-header d-flex bg-white justify-content-between">
+    <ul data-v-54d51888="" class="nav nav-pills">
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">Example</a></li>
     </ul>
-    <ul class="nav nav-pills justify-content-end">
+    <ul data-v-54d51888="" class="nav nav-pills justify-content-end">
       <!--v-if-->
-      <li class="nav-item"><a href="#" class="nav-link active"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <polyline points="7 8 3 12 7 16"></polyline>
-            <polyline points="17 8 21 12 17 16"></polyline>
-            <line x1="14" y1="4" x2="10" y2="20"></line>
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link active"><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path data-v-54d51888="" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <polyline data-v-54d51888="" points="7 8 3 12 7 16"></polyline>
+            <polyline data-v-54d51888="" points="17 8 21 12 17 16"></polyline>
+            <line data-v-54d51888="" x1="14" y1="4" x2="10" y2="20"></line>
           </svg>
           <!--v-if-->
           <!--v-if-->Template
         </a></li>
-      <li class="nav-item"><a href="#" class="nav-link">
-          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-            <line x1="9" y1="9" x2="10" y2="9"></line>
-            <line x1="9" y1="13" x2="15" y2="13"></line>
-            <line x1="9" y1="17" x2="15" y2="17"></line>
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">
+          <!--v-if--><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" data-v-54d51888=""></path>
+            <path d="M14 3v4a1 1 0 0 0 1 1h4" data-v-54d51888=""></path>
+            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" data-v-54d51888=""></path>
+            <line x1="9" y1="9" x2="10" y2="9" data-v-54d51888=""></line>
+            <line x1="9" y1="13" x2="15" y2="13" data-v-54d51888=""></line>
+            <line x1="9" y1="17" x2="15" y2="17" data-v-54d51888=""></line>
           </svg>
           <!--v-if-->Script
         </a></li>
-      <li class="nav-item"><a href="#" class="nav-link">
+      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">
           <!--v-if-->
-          <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-            <path d="M10 13l-1 2l1 2"></path>
-            <path d="M14 13l1 2l-1 2"></path>
+          <!--v-if--><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" data-v-54d51888=""></path>
+            <path d="M14 3v4a1 1 0 0 0 1 1h4" data-v-54d51888=""></path>
+            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" data-v-54d51888=""></path>
+            <path d="M10 13l-1 2l1 2" data-v-54d51888=""></path>
+            <path d="M14 13l1 2l-1 2" data-v-54d51888=""></path>
           </svg>Style
         </a></li>
-      <li class="d-flex align-items-center"><a href="#" class="ml-2 mr-n2 expand-collapse"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M9 10l3 -3l3 3"></path>
-            <path d="M9 14l3 3l3 -3"></path>
+      <li data-v-54d51888="" class="d-flex align-items-center"><a data-v-54d51888="" href="#" class="ml-2 mr-n2 expand-collapse leading-none"><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path data-v-54d51888="" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path data-v-54d51888="" d="M9 10l3 -3l3 3"></path>
+            <path data-v-54d51888="" d="M9 14l3 3l3 -3"></path>
           </svg></a></li>
     </ul>
   </div>
-  <div class="card-body">
+  <div data-v-54d51888="" class="card-body">
     <!--v-if-->
-    <div>
-      <div class="language-markup"><pre class="language-markup"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <div data-v-54d51888="">
+      <div data-v-e6ee2242="" data-v-54d51888="" class="language-markup"><pre data-v-e6ee2242="" class="language-markup"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>demo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-primary<span class="token punctuation">"</span></span> <span class="token attr-name">@click.prevent</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>(clicked - {{ count }})<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
@@ -258,5 +212,5 @@ exports[`VueExample renders the template section 1`] = `
     <!--v-if-->
     <!--v-if-->
   </div>
-</div>
+</div>"
 `;

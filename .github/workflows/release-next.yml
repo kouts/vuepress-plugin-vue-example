@@ -35,7 +35,7 @@ jobs:
         run: npm run lint-fix
 
       - name: Run tests 🧪
-        run: npm run test:unit-coverage --if-present
+        run: npm run test:unit
 
       - name: Release
         env:

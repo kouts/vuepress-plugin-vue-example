@@ -1,24 +1,20 @@
-import VueExample from '@/VueExample'
-import { loadComponentAsString } from '@temp/loadComponent'
 import { mount } from '@vue/test-utils'
+import VueExample from '@/VueExample.vue'
 import { waitNT, waitRAF } from '../utils'
-
-jest.mock('@temp/loadComponent')
+import { loadComponentAsString } from './__mocks__/temp/loadComponent'
 
 const countLines = (str) => str.split(/\r\n|\r|\n/).length
 
 const props = {
-  file: 'test-component.vue'
+  file: 'test-component.vue',
 }
 
 let wrapper
-let contents
 
 beforeEach(async () => {
   wrapper = mount(VueExample, {
-    props
+    props,
   })
-  contents = await loadComponentAsString()
 })
 
 afterEach(() => {
@@ -33,11 +29,12 @@ describe('VueExample', () => {
 
     expect(div.exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
-    // console.log(wrapper.html());
   })
 
-  it('parses the template SFC sections', () => {
-    const parsed = wrapper.vm.parseSfcSection('template', contents)
+  it('parses the template SFC sections', async () => {
+    const contents = await loadComponentAsString()
+
+    const parsed = wrapper.vm.parseSfcSection('template', contents.default)
 
     expect(countLines(parsed)).toBe(5)
     expect(parsed).toContain('<template>')
@@ -48,10 +45,12 @@ describe('VueExample', () => {
     expect(parsed).not.toContain('</style>')
   })
 
-  it('parses the script SFC sections', () => {
-    const parsed = wrapper.vm.parseSfcSection('script', contents)
+  it('parses the script SFC sections', async () => {
+    const contents = await loadComponentAsString()
 
-    expect(countLines(parsed)).toBe(16)
+    const parsed = wrapper.vm.parseSfcSection('script', contents.default)
+
+    expect(countLines(parsed)).toBe(17)
     expect(parsed).toContain('<script>')
     expect(parsed).toContain('</script>')
     expect(parsed).not.toContain('<template>')
@@ -60,8 +59,10 @@ describe('VueExample', () => {
     expect(parsed).not.toContain('</style>')
   })
 
-  it('parses the style SFC sections', () => {
-    const parsed = wrapper.vm.parseSfcSection('style', contents)
+  it('parses the style SFC sections', async () => {
+    const contents = await loadComponentAsString()
+
+    const parsed = wrapper.vm.parseSfcSection('style', contents.default)
 
     expect(countLines(parsed)).toBe(13)
     expect(parsed).toContain('<style')
@@ -187,8 +188,8 @@ describe('VueExample', () => {
     const wrapperWithLoader = mount(VueExample, {
       propsData: {
         ...props,
-        showLoader: true
-      }
+        showLoader: true,
+      },
     })
     const loader = wrapperWithLoader.find('div.loader')
 
@@ -199,8 +200,8 @@ describe('VueExample', () => {
     const wrapperWithComments = mount(VueExample, {
       propsData: {
         ...props,
-        stripComments: false
-      }
+        stripComments: false,
+      },
     })
 
     // Comments in template
@@ -224,16 +225,21 @@ describe('VueExample', () => {
     expect(pre.text()).toContain('This is a test comment inside the style part')
   })
 
-  it('shows and hides the main section depending on the expanded data variable', async () => {
-    wrapper.setData({ expanded: false })
+  it('hides the main section when the startExpanded props is false', async () => {
+    wrapper.setProps({ startExpanded: false })
     await waitNT(wrapper.vm)
     await waitRAF()
     const cardBody = wrapper.find('div.card-body')
 
     expect(cardBody.attributes().style).toBe('display: none;')
-    wrapper.setData({ expanded: true })
+  })
+
+  it('shows the main section when the startExpanded props is true', async () => {
+    wrapper.setProps({ startExpanded: true })
     await waitNT(wrapper.vm)
     await waitRAF()
-    expect(cardBody.attributes().style).toBe('')
+    const cardBody = wrapper.find('div.card-body')
+
+    expect(cardBody.attributes().style).not.toBeDefined()
   })
 })

@@ -7,18 +7,19 @@
 
 <script>
 export default {
+  name: 'TestComponent',
   // This is a test comment inside the script part
   data() {
     return {
-      count: 0
+      count: 0,
     }
   },
   methods: {
     handleClick() {
       this.count++
       console.log('clicked', this.count)
-    }
-  }
+    },
+  },
 }
 </script>
 

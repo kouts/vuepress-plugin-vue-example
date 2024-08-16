@@ -1,6 +1,6 @@
+import './styles/styles.css'
+import { defineClientConfig } from 'vuepress/client'
 import Example1 from './components/Example1.vue'
-import { defineClientConfig } from '@vuepress/client'
-import './styles/styles.scss'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {
@@ -9,5 +9,5 @@ export default defineClientConfig({
   setup() {
     // noop
   },
-  rootComponents: []
+  rootComponents: [],
 })

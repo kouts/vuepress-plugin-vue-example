@@ -79,7 +79,7 @@
           </li>
         </template>
         <li class="d-flex align-items-center">
-          <a href="#" class="ml-2 mr-n2 expand-collapse" @click.prevent="expanded = !expanded">
+          <a href="#" class="ml-2 mr-n2 expand-collapse leading-none" @click.prevent="expanded = !expanded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -103,7 +103,7 @@
       <template v-for="section in sections">
         <div v-if="sectionSelected === section.name && section.name !== 'example'" :key="section.name">
           <slot :name="section.name"></slot>
-          <vue-example-highlight :code="section.contents" :language="section.language" />
+          <VueExampleHighlight :code="section.contents" :language="section.language" />
         </div>
       </template>
       <template v-if="sectionSelected === 'example'">
@@ -116,84 +116,84 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import VueExampleHighlight from './VueExampleHighlight'
 import { loadComponent, loadComponentAsString } from '@temp/loadComponent'
 import { markRaw } from 'vue'
+import VueExampleHighlight from './VueExampleHighlight.vue'
 
 export default {
   name: 'SourceView',
   components: {
-    VueExampleHighlight
+    VueExampleHighlight,
   },
   props: {
     file: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      default: null
+      default: null,
     },
     stripComments: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showLabels: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showIcons: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showLoader: {
       type: Boolean,
-      default: false
+      default: false,
     },
     startExpanded: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
       component: undefined,
       sections: [],
       sectionSelected: 'example',
-      expanded: true
+      expanded: true,
     }
   },
-  created() {
-    this.createComponent()
-    this.createSections()
+  async created() {
+    await this.createComponent()
+    await this.createSections()
     this.expanded = this.startExpanded
   },
   methods: {
-    createComponent() {
-      loadComponent(this.$props.file).then((component) => {
-        this.component = markRaw(component)
-      })
-    },
-    createSections() {
-      loadComponentAsString(this.$props.file).then((contents) => {
-        const sections = []
+    async createComponent() {
+      const res = await loadComponent(this.$props.file)
 
-        sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })
-        sections.push({
-          name: 'template',
-          label: 'Template',
-          contents: this.parseSfcSection('template', contents),
-          language: 'markup'
-        })
-        sections.push({
-          name: 'script',
-          label: 'Script',
-          contents: this.parseSfcSection('script', contents),
-          language: 'javascript'
-        })
-        sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' })
-        this.sections = sections.filter((s) => s.contents)
+      this.component = markRaw(res)
+    },
+    async createSections() {
+      const res = await loadComponentAsString(this.$props.file)
+      const contents = res.default
+      const sections = []
+
+      sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })
+      sections.push({
+        name: 'template',
+        label: 'Template',
+        contents: this.parseSfcSection('template', contents),
+        language: 'markup',
       })
+      sections.push({
+        name: 'script',
+        label: 'Script',
+        contents: this.parseSfcSection('script', contents),
+        language: 'javascript',
+      })
+      sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' })
+      this.sections = sections.filter((s) => s.contents)
     },
     parseSfcSection(tag, contents) {
       const string = `(<${tag}(.*)?>[\\w\\W]*<\\/${tag}>)`
@@ -224,13 +224,14 @@ export default {
       }
 
       return str
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 $primary-color: #3eaf7c;
+$primary-color-accent: #26a36f;
 $white-color: #fff;
 $black-color: #000;
 $secondary-color: #717d89;
@@ -262,6 +263,9 @@ $secondary-color: #717d89;
   display: -ms-flexbox !important;
   display: flex !important;
 }
+.align-items-center {
+  align-items: center;
+}
 .bg-white {
   background-color: $white-color !important;
 }
@@ -273,9 +277,10 @@ $secondary-color: #717d89;
   margin-bottom: 0;
   list-style: none;
 }
-.nav-link {
+.nav-pills .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  text-decoration: none;
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -302,13 +307,15 @@ $secondary-color: #717d89;
 .overflow-hidden {
   overflow: hidden;
 }
+.leading-none {
+  line-height: 1;
+}
 
 ul {
   margin-top: 0;
 }
-.nav-pills .nav-item > a.nav-link:hover {
-  text-decoration: none;
-  border-bottom: none;
+.nav-pills .nav-item > a.nav-link:not(.active):hover {
+  color: $primary-color-accent;
 }
 .nav-item a svg {
   stroke: $primary-color;
