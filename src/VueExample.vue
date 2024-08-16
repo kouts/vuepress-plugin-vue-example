@@ -231,6 +231,7 @@ export default {
 
 <style lang="scss" scoped>
 $primary-color: #3eaf7c;
+$primary-color-accent: #26a36f;
 $white-color: #fff;
 $black-color: #000;
 $secondary-color: #717d89;
@@ -273,9 +274,10 @@ $secondary-color: #717d89;
   margin-bottom: 0;
   list-style: none;
 }
-.nav-link {
+.nav-pills .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  text-decoration: none;
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -306,9 +308,8 @@ $secondary-color: #717d89;
 ul {
   margin-top: 0;
 }
-.nav-pills .nav-item > a.nav-link:hover {
-  text-decoration: none;
-  border-bottom: none;
+.nav-pills .nav-item > a.nav-link:not(.active):hover {
+  color: $primary-color-accent;
 }
 .nav-item a svg {
   stroke: $primary-color;
