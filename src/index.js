@@ -7,7 +7,7 @@ export const vueExamplePlugin = (options) => {
     return {
       name: 'vue-example',
       async onPrepared(app) {
-        const opts = Object.assign({}, { componentsPath: '' }, options)
+        const opts = Object.assign({}, { componentsPath: '/docs/.vuepress/components' }, options)
 
         await app.writeTemp(
           'loadComponent.js',
