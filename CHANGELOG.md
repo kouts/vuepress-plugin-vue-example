@@ -1,3 +1,29 @@
+# [3.0.0](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.8...v3.0.0) (2024-08-16)
+
+
+### Bug Fixes
+
+* added createSections method ([edc6b92](https://github.com/kouts/vuepress-plugin-vue-example/commit/edc6b92fa73edcccf5fec060959fec27cc6aa985))
+* added default components path ([e63b85e](https://github.com/kouts/vuepress-plugin-vue-example/commit/e63b85ee1457accbdc7fdadc3d96777a25dfd7ba))
+* added pnpm to release action, fixed resolutions ([0fcd0ed](https://github.com/kouts/vuepress-plugin-vue-example/commit/0fcd0ed19494e24a56439030e7215a15f85a711a))
+* fixed collapse handle styling ([10ec721](https://github.com/kouts/vuepress-plugin-vue-example/commit/10ec721edc46dd35d495871b38f56385e8c381e2))
+* fixed examples dir ([cab20fd](https://github.com/kouts/vuepress-plugin-vue-example/commit/cab20fdb9b4004ce4c57d60fd91261563590a1cd))
+* fixed examples path ([ffa7a43](https://github.com/kouts/vuepress-plugin-vue-example/commit/ffa7a43afc02a2f3db6a9a50c551e1d43f940b75))
+* fixed link styling ([0c58fdb](https://github.com/kouts/vuepress-plugin-vue-example/commit/0c58fdb311d524cdd2b2d675326c9baedc716813))
+* removed unneeded step ([023e48f](https://github.com/kouts/vuepress-plugin-vue-example/commit/023e48fd217388e50b0e87902f07734ec7f6eb2e))
+* split release action to 2 jobs ([f031844](https://github.com/kouts/vuepress-plugin-vue-example/commit/f0318444e5b6b4d43ba5e5ff396707f1e9d7618f))
+* updated commitlint config ([5bc4f34](https://github.com/kouts/vuepress-plugin-vue-example/commit/5bc4f346916489ff27fbd7c3bf09da422049b279))
+* updated lint config, fixed tests ([81a50ac](https://github.com/kouts/vuepress-plugin-vue-example/commit/81a50ac99b7b6579d5250b6d7594f10c4a326efa))
+* updated node to v20 ([cf96616](https://github.com/kouts/vuepress-plugin-vue-example/commit/cf966168d2e7ae43c1cdfa2756009f259342ea43))
+* updated npm packages ([d2c8b2b](https://github.com/kouts/vuepress-plugin-vue-example/commit/d2c8b2bfec8bf1fdde0193d47f811678404c606f))
+* wip - added loadComponent method ([2b25d2e](https://github.com/kouts/vuepress-plugin-vue-example/commit/2b25d2eef8017ca1217313d223a1a4938da4c62c))
+* wip - added vite bundler ([fbcac38](https://github.com/kouts/vuepress-plugin-vue-example/commit/fbcac38a2384b0c11d96a2d1929a9a35df3f81df))
+
+
+### BREAKING CHANGES
+
+* replaced webpack with vite
+
 ## [2.0.8](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.7...v2.0.8) (2023-06-04)
 
 
