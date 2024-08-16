@@ -15,16 +15,16 @@ Check out the official Vuepress documentation for [Using a Plugin](https://vuepr
 ```javascript
 // .vuepress/config.js
 import { vueExamplePlugin } from 'vuepress-plugin-vue-example'
-import { defineUserConfig } from 'vuepress-webpack'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   plugins: [
     vueExamplePlugin({
       // You need to provide a directory that all the example .vue files will be stored.
       // You can use sub-directories to separate examples into categories.
-      componentsPath: '/examples/'
-    })
-  ]
+      componentsPath: '/examples/',
+    }),
+  ],
 })
 ```
 
