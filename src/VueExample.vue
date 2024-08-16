@@ -79,7 +79,7 @@
           </li>
         </template>
         <li class="d-flex align-items-center">
-          <a href="#" class="ml-2 mr-n2 expand-collapse" @click.prevent="expanded = !expanded">
+          <a href="#" class="ml-2 mr-n2 expand-collapse leading-none" @click.prevent="expanded = !expanded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -263,6 +263,9 @@ $secondary-color: #717d89;
   display: -ms-flexbox !important;
   display: flex !important;
 }
+.align-items-center {
+  align-items: center;
+}
 .bg-white {
   background-color: $white-color !important;
 }
@@ -303,6 +306,9 @@ $secondary-color: #717d89;
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.leading-none {
+  line-height: 1;
 }
 
 ul {
