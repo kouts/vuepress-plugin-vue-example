@@ -1,5 +1,5 @@
 import './styles/styles.css'
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig } from 'vuepress/client'
 import Example1 from './components/Example1.vue'
 
 export default defineClientConfig({
