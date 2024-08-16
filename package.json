@@ -24,8 +24,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test:unit": "vitest",
-    "lint": "eslint \"**/*.{vue,ts,js}\"",
-    "lint-fix": "eslint --fix \"**/*.{vue,ts,js}\"",
+    "lint": "eslint \"**/*.{vue,ts,js,cjs}\"",
+    "lint-fix": "eslint --fix \"**/*.{vue,ts,js,cjs}\"",
     "prepare": "husky"
   },
   "devDependencies": {
