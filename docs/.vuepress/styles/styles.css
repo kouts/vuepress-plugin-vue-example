@@ -71,6 +71,7 @@ blockquote p {
 }
 #browsers-support + table th img {
   vertical-align: baseline;
+  max-width: 32px;
 }
 
 /* Content width fix */
