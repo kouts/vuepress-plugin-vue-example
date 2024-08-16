@@ -2,54 +2,8 @@
 
 exports[`VueExample > renders correctly 1`] = `
 "<div data-v-54d51888="" class="card">
-  <div data-v-54d51888="" class="card-header d-flex bg-white justify-content-between">
-    <ul data-v-54d51888="" class="nav nav-pills">
-      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link active">Example</a></li>
-    </ul>
-    <ul data-v-54d51888="" class="nav nav-pills justify-content-end">
-      <!--v-if-->
-      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link"><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path data-v-54d51888="" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <polyline data-v-54d51888="" points="7 8 3 12 7 16"></polyline>
-            <polyline data-v-54d51888="" points="17 8 21 12 17 16"></polyline>
-            <line data-v-54d51888="" x1="14" y1="4" x2="10" y2="20"></line>
-          </svg>
-          <!--v-if-->
-          <!--v-if-->Template
-        </a></li>
-      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">
-          <!--v-if--><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" data-v-54d51888=""></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4" data-v-54d51888=""></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" data-v-54d51888=""></path>
-            <line x1="9" y1="9" x2="10" y2="9" data-v-54d51888=""></line>
-            <line x1="9" y1="13" x2="15" y2="13" data-v-54d51888=""></line>
-            <line x1="9" y1="17" x2="15" y2="17" data-v-54d51888=""></line>
-          </svg>
-          <!--v-if-->Script
-        </a></li>
-      <li data-v-54d51888="" class="nav-item"><a data-v-54d51888="" href="#" class="nav-link">
-          <!--v-if-->
-          <!--v-if--><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" data-v-54d51888=""></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4" data-v-54d51888=""></path>
-            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" data-v-54d51888=""></path>
-            <path d="M10 13l-1 2l1 2" data-v-54d51888=""></path>
-            <path d="M14 13l1 2l-1 2" data-v-54d51888=""></path>
-          </svg>Style
-        </a></li>
-      <li data-v-54d51888="" class="d-flex align-items-center"><a data-v-54d51888="" href="#" class="ml-2 mr-n2 expand-collapse leading-none"><svg data-v-54d51888="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path data-v-54d51888="" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path data-v-54d51888="" d="M9 10l3 -3l3 3"></path>
-            <path data-v-54d51888="" d="M9 14l3 3l3 -3"></path>
-          </svg></a></li>
-    </ul>
-  </div>
+  <!--v-if-->
   <div data-v-54d51888="" class="card-body">
-    <!--v-if-->
-    <!--v-if-->
-    <!--v-if-->
-    <!--v-if-->
     <!---->
   </div>
 </div>"
