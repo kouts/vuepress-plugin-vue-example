@@ -1,8 +1,8 @@
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
-import { fileURLToPath } from 'url'
-import { searchPlugin } from '@vuepress/plugin-search'
 import { viteBundler } from '@vuepress/bundler-vite'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { defaultTheme } from '@vuepress/theme-default'
+import { fileURLToPath } from 'url'
+import { defineUserConfig } from 'vuepress'
 import { vueExamplePlugin } from '../../src/index.js'
 
 const examplesDir = fileURLToPath(new URL('../.examples/', import.meta.url))
@@ -17,27 +17,27 @@ export default defineUserConfig({
     sidebar: [
       {
         link: '/',
-        text: 'Introduction'
+        text: 'Introduction',
       },
       {
         link: '/installation/',
-        text: 'Installation and Usage'
+        text: 'Installation and Usage',
       },
       {
         link: '/options/',
-        text: 'Options'
-      }
-    ]
+        text: 'Options',
+      },
+    ],
   }),
   plugins: [
     vueExamplePlugin({
-      componentsPath: examplesDir
+      componentsPath: examplesDir,
     }),
     searchPlugin({
       // options
-    })
+    }),
   ],
   dest: 'public',
   title: 'vuepress-plugin-vue-example',
-  description: "A Vuepress 2 plugin to display Vue components' live examples and source code inside documentation."
+  description: "A Vuepress 2 plugin to display Vue components' live examples and source code inside documentation.",
 })

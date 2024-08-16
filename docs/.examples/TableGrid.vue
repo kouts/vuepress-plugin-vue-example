@@ -20,19 +20,20 @@
 
 <script>
 export default {
+  name: 'TableGrid',
   props: {
     heroes: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     columns: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     filterKey: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   data: function () {
     const sortOrders = {}
@@ -43,7 +44,7 @@ export default {
 
     return {
       sortKey: '',
-      sortOrders
+      sortOrders,
     }
   },
   computed: {
@@ -70,7 +71,7 @@ export default {
       }
 
       return heroes
-    }
+    },
   },
   methods: {
     capitalize: function (str) {
@@ -79,8 +80,8 @@ export default {
     sortBy: function (key) {
       this.sortKey = key
       this.sortOrders[key] = this.sortOrders[key] * -1
-    }
-  }
+    },
+  },
 }
 </script>
 

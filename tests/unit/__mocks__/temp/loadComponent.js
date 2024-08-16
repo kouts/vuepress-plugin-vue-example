@@ -1,6 +1,8 @@
+import { defineAsyncComponent } from 'vue'
+
 export function loadComponent(file) {
   try {
-    return import('./test-component.vue').then((component) => component.default)
+    return defineAsyncComponent(() => import('./test-component.vue'))
   } catch (err) {
     console.log(err)
   }
@@ -8,7 +10,7 @@ export function loadComponent(file) {
 
 export function loadComponentAsString(file) {
   try {
-    return import('./test-component.text.vue').then((component) => component.default)
+    return import('./test-component.text.vue?raw')
   } catch (err) {
     console.log(err)
   }

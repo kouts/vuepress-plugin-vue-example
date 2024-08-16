@@ -28,10 +28,10 @@ export const vueExamplePlugin = (options) => {
                 console.log(err);
               }
             }
-          `
+          `,
         )
       },
-      clientConfigFile: path.resolve(__dirname, 'client.js')
+      clientConfigFile: path.resolve(__dirname, 'client.js'),
     }
   }
 }

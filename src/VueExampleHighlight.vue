@@ -12,19 +12,19 @@ export default {
   props: {
     code: {
       type: String,
-      default: ''
+      default: '',
     },
     language: {
       type: String,
-      default: 'markup'
-    }
+      default: 'markup',
+    },
   },
   mounted: function () {
     const code = document.createElement('code')
 
     code.innerHTML = Prism.highlight(this.$props.code, Prism.languages[this.$props.language], this.$props.language)
     this.$refs.code.appendChild(code)
-  }
+  },
 }
 </script>
 

@@ -103,7 +103,7 @@
       <template v-for="section in sections">
         <div v-if="sectionSelected === section.name && section.name !== 'example'" :key="section.name">
           <slot :name="section.name"></slot>
-          <vue-example-highlight :code="section.contents" :language="section.language" />
+          <VueExampleHighlight :code="section.contents" :language="section.language" />
         </div>
       </template>
       <template v-if="sectionSelected === 'example'">
@@ -116,51 +116,51 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import VueExampleHighlight from './VueExampleHighlight.vue'
 import { loadComponent, loadComponentAsString } from '@temp/loadComponent'
 import { markRaw } from 'vue'
+import VueExampleHighlight from './VueExampleHighlight.vue'
 
 export default {
   name: 'SourceView',
   components: {
-    VueExampleHighlight
+    VueExampleHighlight,
   },
   props: {
     file: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      default: null
+      default: null,
     },
     stripComments: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showLabels: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showIcons: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showLoader: {
       type: Boolean,
-      default: false
+      default: false,
     },
     startExpanded: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
       component: undefined,
       sections: [],
       sectionSelected: 'example',
-      expanded: true
+      expanded: true,
     }
   },
   async created() {
@@ -176,9 +176,7 @@ export default {
     },
     async createSections() {
       const res = await loadComponentAsString(this.$props.file)
-
       const contents = res.default
-
       const sections = []
 
       sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })
@@ -186,13 +184,13 @@ export default {
         name: 'template',
         label: 'Template',
         contents: this.parseSfcSection('template', contents),
-        language: 'markup'
+        language: 'markup',
       })
       sections.push({
         name: 'script',
         label: 'Script',
         contents: this.parseSfcSection('script', contents),
-        language: 'javascript'
+        language: 'javascript',
       })
       sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' })
       this.sections = sections.filter((s) => s.contents)
@@ -226,8 +224,8 @@ export default {
       }
 
       return str
-    }
-  }
+    },
+  },
 }
 </script>
 
