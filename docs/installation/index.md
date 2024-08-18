@@ -1,10 +1,9 @@
 ## Installation
 
-Install `vuepress-plugin-vue-example@next` via npm  
-This plugin requires `prismjs` and `@vuepress/plugin-prismjs` as a peer dependencies.
+Install `vuepress-plugin-vue-example@next` and `prismjs` via npm.
 
 ```bash
-npm install -D vuepress-plugin-vue-example@next prismjs @vuepress/plugin-prismjs@next
+npm install -D vuepress-plugin-vue-example@next prismjs
 ```
 
 ## Usage
@@ -15,14 +14,19 @@ Check out the official Vuepress documentation for [Using a Plugin](https://vuepr
 
 ```javascript
 // .vuepress/config.js
-import { vueExamplePlugin } from 'vuepress-plugin-vue-example'
+import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
+import { vueExamplePlugin } from 'vuepress-plugin-vue-example'
 
 export default defineUserConfig({
+  theme: defaultTheme({
+    themePlugins: {
+      prismjs: {
+        theme: 'tomorrow',
+      },
+    },
+  }),
   plugins: [
-    prismjsPlugin({
-      theme: 'tomorrow',
-    }),
     vueExamplePlugin({
       // Provide a directory where all the example `.vue` files will be stored.
       // Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.

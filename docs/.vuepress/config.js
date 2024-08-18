@@ -1,5 +1,4 @@
 import { viteBundler } from '@vuepress/bundler-vite'
-import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { defaultTheme } from '@vuepress/theme-default'
 import { fileURLToPath } from 'url'
@@ -29,11 +28,13 @@ export default defineUserConfig({
         text: 'Options',
       },
     ],
+    themePlugins: {
+      prismjs: {
+        theme: 'tomorrow',
+      },
+    },
   }),
   plugins: [
-    prismjsPlugin({
-      theme: 'tomorrow',
-    }),
     vueExamplePlugin({
       componentsPath: examplesDir,
     }),
