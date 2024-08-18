@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.0...v3.0.1) (2024-08-18)
+
+
+### Bug Fixes
+
+* updated lint config and pnpm version in gh action ([623ad8d](https://github.com/kouts/vuepress-plugin-vue-example/commit/623ad8d859ea6a33aaf4063a9ecc2dc1bfda4646))
+
 # [3.0.0](https://github.com/kouts/vuepress-plugin-vue-example/compare/v2.0.8...v3.0.0) (2024-08-16)
 
 
