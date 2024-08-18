@@ -1,10 +1,10 @@
 ## Installation
 
 Install `vuepress-plugin-vue-example@next` via npm  
-This plugin requires `@vuepress/plugin-shiki` as a peer dependency.
+This plugin requires `shiki` as a peer dependency.
 
 ```bash
-npm install vuepress-plugin-vue-example@next @vuepress/plugin-shiki --save-dev
+npm install -D vuepress-plugin-vue-example@next shiki
 ```
 
 ## Usage

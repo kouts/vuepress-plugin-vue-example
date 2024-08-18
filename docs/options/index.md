@@ -1,13 +1,16 @@
 ## Config
+
 #### componentsPath
+
 - Type: `string`
-- Required: true  
+- Required: true
 
 The folder in which all the example `.vue` components are stored.  
+Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.  
 It may contain sub-folders for better organization.
 
-
 ## Props
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -72,14 +75,19 @@ It may contain sub-folders for better organization.
 </table>
 
 ## Slots
+
 ### default
+
 The default slot to use for adding content inside the live example section.
 
 ### template
+
 The slot to use for adding content inside the template section.
 
 ### script
+
 The slot to use for adding content inside the script section.
 
 ### style
+
 The slot to use for adding content inside the style section.

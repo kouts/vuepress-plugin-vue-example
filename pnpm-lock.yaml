@@ -11,10 +11,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      shiki:
-        specifier: ^1.14.1
-        version: 1.14.1
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.4.0
@@ -67,6 +63,9 @@ importers:
       sass:
         specifier: ^1.77.8
         version: 1.77.8
+      shiki:
+        specifier: ^1.14.1
+        version: 1.14.1
       vite:
         specifier: ^5.4.1
         version: 5.4.1(@types/node@22.4.0)(sass@1.77.8)
