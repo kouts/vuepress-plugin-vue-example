@@ -1,31 +1,29 @@
 import { shallowMount } from '@vue/test-utils'
+import Prism from 'prismjs'
 import VueExampleHighlight from '@/VueExampleHighlight.vue'
-import { waitNT } from '../utils'
 
-vi.mock(
-  'shiki',
-  vi.fn(() => ({
-    codeToHtml: () => '<p>Hello world</p>',
-  })),
-)
+vi.mock('prismjs')
+Prism.highlight = vi.fn((code) => code)
 
 describe('VueExampleHighlight', () => {
   const props = {
     code: '<p>Hello world</p>',
-    language: 'vue-html',
+    language: 'html',
   }
 
-  it('renders the correct markup', async () => {
+  it('renders the correct markup', () => {
     const wrapper = shallowMount(VueExampleHighlight, {
       props,
     })
+    const div = wrapper.find(`div.language-${wrapper.props().language}`)
+    const pre = wrapper.find(`pre.language-${wrapper.props().language}`)
+    const code = wrapper.find('code')
 
-    await waitNT(wrapper.vm)
-
-    const contents = wrapper.find('p')
-
-    expect(wrapper.classes()).toEqual(['shiki-container', 'shiki-vue-html'])
-    expect(contents.text()).toBe('Hello world')
+    expect(div.exists()).toBe(true)
+    expect(pre.exists()).toBe(true)
+    expect(code.exists()).toBe(true)
+    expect(code.text()).toContain('Hello world')
+    // console.log(wrapper.html())
   })
 
   it('renders the correctly', () => {

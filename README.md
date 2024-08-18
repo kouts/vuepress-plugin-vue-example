@@ -14,7 +14,7 @@ A Vuepress 2 plugin to display Vue components' live examples and source code ins
 ## Features
 
 - Easy to use, with just a single `vue-example` tag inside `.md` or `.vue` files
-- Uses the built-in syntax highlighting features of Vuepress
+- Uses `prismjs` for syntax highlighting
 - Displays a fully-working live example
 - Splits source code in separate sections for `template` `script` and `style`
 - Capability to strip comments from the source code

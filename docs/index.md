@@ -9,7 +9,7 @@ This plugin only works using [Vite as the bundler](https://v2.vuepress.vuejs.org
 ## Features
 
 - Easy to use, with just a single `vue-example` tag inside `.md` or `.vue` files
-- Uses the built-in syntax highlighting features of Vuepress
+- Uses `prismjs` for syntax highlighting
 - Displays a fully-working live example
 - Splits source code in separate sections for `template` `script` and `style`
 - Capability to strip comments from the source code

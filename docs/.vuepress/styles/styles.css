@@ -141,3 +141,8 @@ h3 {
 .card {
   margin-top: 1rem;
 }
+
+/* Fix warning alert padding */
+.custom-container.warning {
+  padding-top: 1px;
+}

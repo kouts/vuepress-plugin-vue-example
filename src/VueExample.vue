@@ -164,6 +164,10 @@ export default {
     }
   },
   async created() {
+    setTimeout(() => {
+      document.documentElement.setAttribute('data-theme', 'dark')
+    }, 400)
+
     await this.createComponent()
     await this.createSections()
     this.expanded = this.startExpanded
@@ -184,7 +188,7 @@ export default {
         name: 'template',
         label: 'Template',
         contents: this.parseSfcSection('template', contents),
-        language: 'vue-html',
+        language: 'markup',
       })
       sections.push({
         name: 'script',
