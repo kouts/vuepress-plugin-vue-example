@@ -1,9 +1,10 @@
 ## Installation
 
-Install `vuepress-plugin-vue-example@next` via npm
+Install `vuepress-plugin-vue-example@next` via npm  
+This plugin requires `@vuepress/plugin-shiki` as a peer dependency.
 
-```
-npm install vuepress-plugin-vue-example@next --save-dev
+```bash
+npm install vuepress-plugin-vue-example@next @vuepress/plugin-shiki --save-dev
 ```
 
 ## Usage
@@ -20,9 +21,10 @@ import { defineUserConfig } from 'vuepress'
 export default defineUserConfig({
   plugins: [
     vueExamplePlugin({
-      // You need to provide a directory that all the example .vue files will be stored.
-      // You can use sub-directories to separate examples into categories.
-      componentsPath: '/examples/',
+      // Provide a directory where all the example `.vue` files will be stored.
+      // Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.
+      // Sub-directories can be utilized to separate examples into categories.
+      componentsPath: '../components/',
     }),
   ],
 })
