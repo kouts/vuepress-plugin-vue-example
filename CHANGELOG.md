@@ -1,3 +1,11 @@
+## [3.0.2](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.1...v3.0.2) (2024-08-18)
+
+
+### Bug Fixes
+
+* replaced prism with shiki ([44eb233](https://github.com/kouts/vuepress-plugin-vue-example/commit/44eb233a904c8fdf9477949f7f790111477ad968))
+* updated pnpm-lock file ([5e12558](https://github.com/kouts/vuepress-plugin-vue-example/commit/5e1255896772a9c049584ecdde0bfec313bfbbc8))
+
 ## [3.0.1](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.0...v3.0.1) (2024-08-18)
 
 
