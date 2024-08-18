@@ -50,8 +50,7 @@ exports[`VueExample > renders correctly 1`] = `
     <!--v-if-->
     <!--v-if-->
     <!--v-if-->
-    <!-- This is a test comment inside the template part -->
-    <p data-v-16e197ad="" data-v-54d51888="" class="demo" file="test-component.vue" stripcomments="true" showlabels="true" showicons="true" showloader="false" startexpanded="true"><button data-v-16e197ad="" class="btn-primary">(clicked - 0)</button></p>
+    <!---->
   </div>
 </div>"
 `;
