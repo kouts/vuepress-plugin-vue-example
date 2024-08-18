@@ -55,5 +55,9 @@
   "resolutions": {
     "@typescript-eslint/utils": "^8.0.0",
     "vuepress": "2.0.0-rc.15"
+  },
+  "peerDependencies": {
+    "vuepress": "^2.0.0-rc.15",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.41"
   }
 }
