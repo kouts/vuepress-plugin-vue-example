@@ -1,6 +1,3 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`VueExampleHighlight > renders the correctly 1`] = `
-"<div data-v-e6ee2242="" class="language-html"><pre data-v-e6ee2242="" class="language-html"><code><p>Hello world</p></code></pre>
-</div>"
-`;
+exports[`VueExampleHighlight > renders the correctly 1`] = `"<div data-v-e6ee2242="" class="shiki-container shiki-vue-html"></div>"`;

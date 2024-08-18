@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { expect } from 'vitest'
 import VueExample from '@/VueExample.vue'
 import { waitNT, waitRAF } from '../utils'
 import { loadComponentAsString } from './__mocks__/temp/loadComponent'
@@ -9,11 +10,37 @@ const props = {
   file: 'test-component.vue',
 }
 
+const createVueExampleHighlightStub = () => {
+  return {
+    template: `<div :class="containerClass">{{ code }}</div>`,
+    props: {
+      code: {
+        type: String,
+        default: '',
+      },
+      language: {
+        type: String,
+        default: 'vue-html',
+      },
+    },
+    computed: {
+      containerClass() {
+        return `shiki-container shiki-${this.language}`
+      },
+    },
+  }
+}
+
 let wrapper
 
 beforeEach(async () => {
   wrapper = mount(VueExample, {
     props,
+    global: {
+      stubs: {
+        VueExampleHighlight: createVueExampleHighlightStub(),
+      },
+    },
   })
 })
 
@@ -124,7 +151,8 @@ describe('VueExample', () => {
     wrapper.setData({ sectionSelected: 'template' })
     await waitNT(wrapper.vm)
     await waitRAF()
-    const pre = wrapper.find('pre.language-markup')
+
+    const pre = wrapper.find('div.shiki-vue-html')
 
     expect(pre.exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
@@ -134,7 +162,7 @@ describe('VueExample', () => {
     wrapper.setData({ sectionSelected: 'script' })
     await waitNT(wrapper.vm)
     await waitRAF()
-    const pre = wrapper.find('pre.language-javascript')
+    const pre = wrapper.find('div.shiki-javascript')
 
     expect(pre.exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
@@ -144,7 +172,7 @@ describe('VueExample', () => {
     wrapper.setData({ sectionSelected: 'style' })
     await waitNT(wrapper.vm)
     await waitRAF()
-    const pre = wrapper.find('pre.language-css')
+    const pre = wrapper.find('div.shiki-css')
 
     expect(pre.exists()).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
@@ -202,26 +230,35 @@ describe('VueExample', () => {
         ...props,
         stripComments: false,
       },
+      global: {
+        stubs: {
+          VueExampleHighlight: createVueExampleHighlightStub(),
+        },
+      },
     })
 
     // Comments in template
     wrapperWithComments.setData({ sectionSelected: 'template' })
     await waitNT(wrapperWithComments.vm)
     await waitRAF()
-    let pre = wrapperWithComments.find('pre.language-markup')
+    let pre = wrapperWithComments.find('div.shiki-vue-html')
 
     expect(pre.text()).toContain('This is a test comment inside the template part')
+
     // Comments in script
     wrapperWithComments.setData({ sectionSelected: 'script' })
     await waitNT(wrapperWithComments.vm)
     await waitRAF()
-    pre = wrapperWithComments.find('pre.language-javascript')
+    pre = wrapperWithComments.find('div.shiki-javascript')
+
     expect(pre.text()).toContain('This is a test comment inside the script part')
+
     // Comments in style
     wrapperWithComments.setData({ sectionSelected: 'style' })
     await waitNT(wrapperWithComments.vm)
     await waitRAF()
-    pre = wrapperWithComments.find('pre.language-css')
+    pre = wrapperWithComments.find('div.shiki-css')
+
     expect(pre.text()).toContain('This is a test comment inside the style part')
   })
 
