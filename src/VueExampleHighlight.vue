@@ -1,11 +1,9 @@
 <template>
-  <div :class="'language-' + language">
-    <pre ref="code" :class="'language-' + language"></pre>
-  </div>
+  <div ref="formattedCode" :class="['shiki-container', `shiki-${language}`]"></div>
 </template>
 
 <script>
-import Prism from 'prismjs'
+import { codeToHtml } from 'shiki'
 
 export default {
   name: 'VueExampleHighlight',
@@ -16,21 +14,36 @@ export default {
     },
     language: {
       type: String,
-      default: 'markup',
+      default: 'vue-html',
     },
   },
-  mounted: function () {
-    const code = document.createElement('code')
+  mounted: async function () {
+    const res = await codeToHtml(this.$props.code, {
+      lang: this.$props.language,
+      theme: 'github-dark-default',
+    })
 
-    code.innerHTML = Prism.highlight(this.$props.code, Prism.languages[this.$props.language], this.$props.language)
-    this.$refs.code.appendChild(code)
+    const codeEl = document.createElement('div')
+
+    codeEl.innerHTML = res
+
+    this.$refs.formattedCode.appendChild(codeEl)
   },
 }
 </script>
 
 <style lang="scss" scoped>
-pre[class*='language-'] {
-  margin-top: 0px;
-  margin-bottom: 0px;
+.shiki-container :deep(pre) {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  line-height: 1.4;
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.shiki-container :deep(pre > code) {
+  background-color: transparent;
 }
 </style>

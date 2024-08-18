@@ -184,7 +184,7 @@ export default {
         name: 'template',
         label: 'Template',
         contents: this.parseSfcSection('template', contents),
-        language: 'markup',
+        language: 'vue-html',
       })
       sections.push({
         name: 'script',
