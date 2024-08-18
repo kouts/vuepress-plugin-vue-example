@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.3...v3.0.4) (2024-08-18)
+
+
+### Bug Fixes
+
+* used prismjs for syntax highlighting ([f68faab](https://github.com/kouts/vuepress-plugin-vue-example/commit/f68faab69fa5bc34117007145214ef205bed5923))
+
 ## [3.0.3](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.2...v3.0.3) (2024-08-18)
 
 
