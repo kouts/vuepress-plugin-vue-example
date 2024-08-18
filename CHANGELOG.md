@@ -1,3 +1,11 @@
+## [3.0.3](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.2...v3.0.3) (2024-08-18)
+
+
+### Bug Fixes
+
+* added shiki as peer dep ([d1e2fa5](https://github.com/kouts/vuepress-plugin-vue-example/commit/d1e2fa544e453514922bbab5613557944c5cbe86))
+* added vuepress/plugin-shiki ([938a1f6](https://github.com/kouts/vuepress-plugin-vue-example/commit/938a1f66f1f90a580772f6a95ca1a0ad5d35eb83))
+
 ## [3.0.2](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.1...v3.0.2) (2024-08-18)
 
 
