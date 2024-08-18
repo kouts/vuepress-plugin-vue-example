@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.4...v3.0.5) (2024-08-18)
+
+
+### Bug Fixes
+
+* removed unneeded prismjs vuepress plugin ([671da72](https://github.com/kouts/vuepress-plugin-vue-example/commit/671da72ae55086de188a5da54299ab4d2c947f1a))
+
 ## [3.0.4](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.3...v3.0.4) (2024-08-18)
 
 
