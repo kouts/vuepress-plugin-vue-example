@@ -57,9 +57,6 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
-      prismjs:
-        specifier: ^1.29.0
-        version: 1.29.0
       sass:
         specifier: ^1.77.8
         version: 1.77.8
