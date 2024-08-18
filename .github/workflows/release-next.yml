@@ -28,7 +28,7 @@ jobs:
       - name: Setup pnpm 📦
         uses: pnpm/action-setup@v4
         with:
-          version: 8.12.1
+          version: 9.7.1
 
       - name: Install dependencies 📦
         run: pnpm install
@@ -37,7 +37,7 @@ jobs:
         run: pnpm run lint-fix
 
       - name: Run tests 🧪
-        run: pnpm run test:unit --run
+        run: pnpm run test:unit
   release:
     runs-on: ${{ matrix.os }}
     needs: ci
@@ -62,7 +62,7 @@ jobs:
       - name: Setup pnpm 📦
         uses: pnpm/action-setup@v4
         with:
-          version: 8.12.1
+          version: 9.7.1
 
       - name: Install dependencies 📦
         run: pnpm install
