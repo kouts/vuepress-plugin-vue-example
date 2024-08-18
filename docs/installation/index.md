@@ -1,10 +1,10 @@
 ## Installation
 
 Install `vuepress-plugin-vue-example@next` via npm  
-This plugin requires `shiki` as a peer dependency.
+This plugin requires `prismjs` and `@vuepress/plugin-prismjs` as a peer dependencies.
 
 ```bash
-npm install -D vuepress-plugin-vue-example@next shiki
+npm install -D vuepress-plugin-vue-example@next prismjs @vuepress/plugin-prismjs@next
 ```
 
 ## Usage
@@ -20,6 +20,9 @@ import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   plugins: [
+    prismjsPlugin({
+      theme: 'tomorrow',
+    }),
     vueExamplePlugin({
       // Provide a directory where all the example `.vue` files will be stored.
       // Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.

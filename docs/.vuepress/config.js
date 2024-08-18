@@ -1,6 +1,6 @@
 import { viteBundler } from '@vuepress/bundler-vite'
+import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { searchPlugin } from '@vuepress/plugin-search'
-import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
 import { fileURLToPath } from 'url'
 import { defineUserConfig } from 'vuepress'
@@ -31,9 +31,8 @@ export default defineUserConfig({
     ],
   }),
   plugins: [
-    shikiPlugin({
-      theme: 'github-dark-default',
-      langs: ['bash', 'css', 'sass', 'scss', 'js', 'ts', 'json', 'vue', 'md', 'diff'],
+    prismjsPlugin({
+      theme: 'tomorrow',
     }),
     vueExamplePlugin({
       componentsPath: examplesDir,
