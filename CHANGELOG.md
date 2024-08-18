@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.5...v3.0.6) (2024-08-18)
+
+
+### Bug Fixes
+
+* change prism import ([ab6cc71](https://github.com/kouts/vuepress-plugin-vue-example/commit/ab6cc7164328bab3b5bfef9add7ed9887de13764))
+
 ## [3.0.5](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.4...v3.0.5) (2024-08-18)
 
 
