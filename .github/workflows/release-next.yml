@@ -38,6 +38,9 @@ jobs:
 
       - name: Run tests 🧪
         run: pnpm run test:unit
+
+      - name: Build
+        run: pnpm run build
   release:
     runs-on: ${{ matrix.os }}
     needs: ci
@@ -69,6 +72,9 @@ jobs:
 
       - name: Install semantic-release extra plugins 📦
         run: pnpm install --save-dev semantic-release @semantic-release/changelog @semantic-release/git
+
+      - name: Build
+        run: pnpm run build
 
       - name: Release
         env:
