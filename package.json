@@ -19,7 +19,8 @@
   "module": "dist/index.js",
   "exports": {
     ".": "./dist/index.js",
-    "./client": "./dist/client.js"
+    "./client": "./dist/client.js",
+    "./style.css": "./dist/assets/style.css"
   },
   "files": [
     "dist"
