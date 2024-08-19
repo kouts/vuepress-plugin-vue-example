@@ -164,10 +164,6 @@ export default {
     }
   },
   async created() {
-    setTimeout(() => {
-      document.documentElement.setAttribute('data-theme', 'dark')
-    }, 400)
-
     await this.createComponent()
     await this.createSections()
     this.expanded = this.startExpanded
