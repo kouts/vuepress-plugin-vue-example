@@ -1,3 +1,10 @@
+## [3.0.10](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.9...v3.0.10) (2024-08-19)
+
+
+### Bug Fixes
+
+* removed unneeded html attribute set ([df002ef](https://github.com/kouts/vuepress-plugin-vue-example/commit/df002efd12a09b7824fb0c86351561cb7a482288))
+
 ## [3.0.9](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.8...v3.0.9) (2024-08-19)
 
 
