@@ -1,3 +1,10 @@
+## [3.0.8](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.7...v3.0.8) (2024-08-19)
+
+
+### Bug Fixes
+
+* added style.css to exports ([5c22379](https://github.com/kouts/vuepress-plugin-vue-example/commit/5c223791c42bc09c25d305d91929ea48aa5339b2))
+
 ## [3.0.7](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.6...v3.0.7) (2024-08-19)
 
 
