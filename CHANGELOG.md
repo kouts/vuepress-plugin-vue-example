@@ -1,3 +1,10 @@
+## [3.0.7](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.6...v3.0.7) (2024-08-19)
+
+
+### Bug Fixes
+
+* added vite build command ([c947245](https://github.com/kouts/vuepress-plugin-vue-example/commit/c9472457056c1e25398330a811f501187e84fcd2))
+
 ## [3.0.6](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.5...v3.0.6) (2024-08-18)
 
 
