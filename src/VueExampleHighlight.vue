@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import * as Prism from 'prismjs'
+import Prism from 'prismjs'
 
 export default {
   name: 'VueExampleHighlight',
