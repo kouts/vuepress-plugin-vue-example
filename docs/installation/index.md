@@ -10,7 +10,7 @@ npm install -D vuepress-plugin-vue-example@next prismjs
 
 Check out the official Vuepress documentation for [Using a Plugin](https://vuepress.vuejs.org/plugin/using-a-plugin.html).
 
-### Register the plugin inside the Vuepress config
+### Import and register the plugin inside Vuepress config
 
 ```javascript
 // .vuepress/config.js
@@ -35,6 +35,13 @@ export default defineUserConfig({
     }),
   ],
 })
+```
+
+### Import the CSS file inside Vuepress client config
+
+```js
+// .vuepress/client.js
+import 'vuepress-plugin-vue-example/style.css'
 ```
 
 ### Use the vue-example component
