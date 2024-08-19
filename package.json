@@ -15,12 +15,18 @@
     "documentation"
   ],
   "type": "module",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./client": "./dist/client.js"
+  },
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vuepress dev docs",
+    "build": "vite build",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test:unit": "vitest",
@@ -40,6 +46,7 @@
     "@vuepress/plugin-search": "2.0.0-rc.41",
     "@vuepress/theme-default": "2.0.0-rc.41",
     "eslint": "^9.9.0",
+    "glob": "^11.0.0",
     "husky": "^9.1.4",
     "jsdom": "^24.1.1",
     "lint-staged": "^15.2.9",
@@ -56,7 +63,6 @@
     "vuepress": "2.0.0-rc.15"
   },
   "peerDependencies": {
-    "vuepress": "^2.0.0-rc.15",
-    "prismjs": "^1.29.0"
+    "vuepress": "^2.0.0-rc.15"
   }
 }

@@ -1,15 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
+import Prism from 'prismjs'
 import VueExampleHighlight from '@/VueExampleHighlight.vue'
 
-vi.mock(
-  'prismjs',
-  vi.fn(() => {
-    return {
-      highlight: vi.fn((code) => code),
-      languages: ['html', 'css', 'javascript'],
-    }
-  }),
-)
+vi.mock('prismjs')
+Prism.highlight = vi.fn((code) => code)
 
 describe('VueExampleHighlight', () => {
   const props = {
