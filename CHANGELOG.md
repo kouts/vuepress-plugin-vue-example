@@ -1,3 +1,10 @@
+## [3.0.9](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.8...v3.0.9) (2024-08-19)
+
+
+### Bug Fixes
+
+* added css to docs ([1d05bf5](https://github.com/kouts/vuepress-plugin-vue-example/commit/1d05bf59f25f2844e908b8c3ba57f0a9d848e50b))
+
 ## [3.0.8](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.7...v3.0.8) (2024-08-19)
 
 
