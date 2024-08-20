@@ -40,7 +40,7 @@ export default defineUserConfig({
       componentsDir: examplesDir,
     }),
     vueExamplePlugin({
-      componentsPath: examplesDir,
+      componentsDir: examplesDir,
     }),
     searchPlugin({
       // options

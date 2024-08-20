@@ -116,7 +116,6 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import { markRaw } from 'vue'
 import VueExampleHighlight from './VueExampleHighlight.vue'
 
 export default {
@@ -125,7 +124,7 @@ export default {
     VueExampleHighlight,
   },
   props: {
-    file: {
+    component: {
       type: String,
       required: true,
     },
@@ -156,28 +155,29 @@ export default {
   },
   data() {
     return {
-      component: 'TableGrid',
       sections: [],
       sectionSelected: 'example',
       expanded: true,
     }
   },
   async created() {
-    await this.createComponent()
     await this.createSections()
     this.expanded = this.startExpanded
   },
   methods: {
-    async createComponent() {
-      /*
-      const res = await loadComponent(this.$props.file)
-
-      this.component = markRaw(res)
-      */
-    },
     async createSections() {
+      // let contents = ''
+
+      // try {
+      //   const parsed = JSON.parse(this.$componentsContents)
+
+      //   contents = parsed[this.component]
+      // } catch (error) {
+      //   console.error('Error parsing JSON', error)
+      // }
+
+      console.log('contents', JSON.parse(this.$componentsContents))
       /*
-      const res = await loadComponentAsString(this.$props.file)
       const contents = res.default
       const sections = []
 

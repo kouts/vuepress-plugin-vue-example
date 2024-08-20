@@ -1,5 +1,5 @@
 <template>
-  <VueExample file="TableGrid" :heroes="heroes" :columns="columns" />
+  <VueExample component="TableGrid" :heroes="heroes" :columns="columns" />
 </template>
 
 <script>
