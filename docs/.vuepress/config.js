@@ -1,4 +1,5 @@
 import { viteBundler } from '@vuepress/bundler-vite'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { defaultTheme } from '@vuepress/theme-default'
 import { fileURLToPath } from 'url'
@@ -35,6 +36,9 @@ export default defineUserConfig({
     },
   }),
   plugins: [
+    registerComponentsPlugin({
+      componentsDir: examplesDir,
+    }),
     vueExamplePlugin({
       componentsPath: examplesDir,
     }),

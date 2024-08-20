@@ -116,7 +116,6 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import { loadComponent, loadComponentAsString } from '@temp/loadComponent'
 import { markRaw } from 'vue'
 import VueExampleHighlight from './VueExampleHighlight.vue'
 
@@ -157,7 +156,7 @@ export default {
   },
   data() {
     return {
-      component: undefined,
+      component: 'TableGrid',
       sections: [],
       sectionSelected: 'example',
       expanded: true,
@@ -170,11 +169,14 @@ export default {
   },
   methods: {
     async createComponent() {
+      /*
       const res = await loadComponent(this.$props.file)
 
       this.component = markRaw(res)
+      */
     },
     async createSections() {
+      /*
       const res = await loadComponentAsString(this.$props.file)
       const contents = res.default
       const sections = []
@@ -194,6 +196,7 @@ export default {
       })
       sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' })
       this.sections = sections.filter((s) => s.contents)
+      */
     },
     parseSfcSection(tag, contents) {
       const string = `(<${tag}(.*)?>[\\w\\W]*<\\/${tag}>)`
