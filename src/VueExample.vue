@@ -116,6 +116,7 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
+import lzString from 'lz-string'
 import VueExampleHighlight from './VueExampleHighlight.vue'
 
 export default {
@@ -166,19 +167,16 @@ export default {
   },
   methods: {
     async createSections() {
-      // let contents = ''
+      let contents = ''
 
-      // try {
-      //   const parsed = JSON.parse(this.$componentsContents)
+      try {
+        const parsed = JSON.parse(this.$componentsContents)
 
-      //   contents = parsed[this.component]
-      // } catch (error) {
-      //   console.error('Error parsing JSON', error)
-      // }
+        contents = lzString.decompressFromBase64(parsed[this.component])
+      } catch (error) {
+        console.error('Error parsing JSON', error)
+      }
 
-      console.log('contents', JSON.parse(this.$componentsContents))
-      /*
-      const contents = res.default
       const sections = []
 
       sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })
@@ -196,7 +194,6 @@ export default {
       })
       sections.push({ name: 'style', label: 'Style', contents: this.parseSfcSection('style', contents), language: 'css' })
       this.sections = sections.filter((s) => s.contents)
-      */
     },
     parseSfcSection(tag, contents) {
       const string = `(<${tag}(.*)?>[\\w\\W]*<\\/${tag}>)`

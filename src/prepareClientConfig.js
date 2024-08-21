@@ -1,5 +1,6 @@
 import { getComponentsFromDir } from '@vuepress/plugin-register-components'
 import { readFile } from 'fs/promises'
+import lzString from 'lz-string'
 import { getDirname } from 'vuepress/utils'
 
 const readFileAsString = async (filePath) => {
@@ -24,7 +25,9 @@ export const prepareClientConfigFile = async (app, options) => {
   const componentsContents = {}
 
   for (const [name, filePath] of Object.entries(componentsFromDir)) {
-    componentsContents[name] = await readFileAsString(filePath)
+    const fileContents = await readFileAsString(filePath)
+
+    componentsContents[name] = lzString.compressToBase64(fileContents)
   }
 
   // client app enhance file content

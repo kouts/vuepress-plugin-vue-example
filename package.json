@@ -52,6 +52,7 @@
     "husky": "^9.1.4",
     "jsdom": "^24.1.1",
     "lint-staged": "^15.2.9",
+    "lz-string": "^1.5.0",
     "prettier": "^3.3.3",
     "prismjs": "^1.29.0",
     "sass": "^1.77.8",
