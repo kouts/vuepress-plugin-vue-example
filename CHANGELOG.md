@@ -1,3 +1,10 @@
+## [3.0.14](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.13...v3.0.14) (2024-08-21)
+
+
+### Bug Fixes
+
+* added local dev var ([5982fbc](https://github.com/kouts/vuepress-plugin-vue-example/commit/5982fbc390075d196b3299141ad0d7091a665d10))
+
 ## [3.0.13](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.12...v3.0.13) (2024-08-21)
 
 
