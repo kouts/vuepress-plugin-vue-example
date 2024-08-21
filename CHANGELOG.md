@@ -1,3 +1,10 @@
+## [3.0.16](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.15...v3.0.16) (2024-08-21)
+
+
+### Bug Fixes
+
+* updated docs ([a1eb8b7](https://github.com/kouts/vuepress-plugin-vue-example/commit/a1eb8b74846301b8686e7abfd90abd8ca20a4fda))
+
 ## [3.0.15](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.14...v3.0.15) (2024-08-21)
 
 
