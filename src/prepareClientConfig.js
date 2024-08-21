@@ -16,7 +16,7 @@ export const readFileAsString = async (filePath) => {
 
 export const prepareClientConfigFile = async (app, options) => {
   const __dirname = getDirname(import.meta.url)
-  const isLocalDev = process.env.IS_LOCAL_DEV && process.env.IS_LOCAL_DEV === 'true'
+  const isDev = import.meta.env.DEV
 
   const componentsFromDir = await getComponentsFromDir(options)
 
@@ -31,7 +31,7 @@ export const prepareClientConfigFile = async (app, options) => {
 
   // client app enhance file content
   const content = `
-  import VueExample from '${__dirname}/VueExample.${isLocalDev ? 'vue' : 'js'}'
+  import VueExample from '${__dirname}/VueExample.${isDev ? 'vue' : 'js'}'
 
   export default {
     enhance: ({ app }) => {
