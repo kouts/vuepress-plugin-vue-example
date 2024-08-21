@@ -1,3 +1,15 @@
+## [3.0.11](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.10...v3.0.11) (2024-08-21)
+
+
+### Bug Fixes
+
+* added docs, fixed vite config ([d1be291](https://github.com/kouts/vuepress-plugin-vue-example/commit/d1be291b19dd75aaae008667da35944a9861e024))
+* added lz-string ([463b3b6](https://github.com/kouts/vuepress-plugin-vue-example/commit/463b3b6b9abcdc899faefd91d7084370d697147a))
+* fixed expand-collapse and tests ([4869b4f](https://github.com/kouts/vuepress-plugin-vue-example/commit/4869b4f10897bf903c41c2ef7ace5cd05508f79e))
+* removed line breaks trim ([51b955b](https://github.com/kouts/vuepress-plugin-vue-example/commit/51b955b46c36a74ebb1615de51933dc3ad35afdc))
+* wip - expose components string content ([1d51bbf](https://github.com/kouts/vuepress-plugin-vue-example/commit/1d51bbfea550b12401bd965ea4c9d7c23ad9b6ff))
+* wip - load components method ([33810e5](https://github.com/kouts/vuepress-plugin-vue-example/commit/33810e5eab37f55a60151f22f4075334e95c6119))
+
 ## [3.0.10](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.9...v3.0.10) (2024-08-19)
 
 
