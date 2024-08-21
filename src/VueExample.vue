@@ -127,7 +127,7 @@ export default {
   props: {
     component: {
       type: String,
-      required: true,
+      default: '',
     },
     title: {
       type: String,
@@ -158,12 +158,11 @@ export default {
     return {
       sections: [],
       sectionSelected: 'example',
-      expanded: true,
+      expanded: this.startExpanded,
     }
   },
   async created() {
     await this.createSections()
-    this.expanded = this.startExpanded
   },
   methods: {
     async createSections() {
