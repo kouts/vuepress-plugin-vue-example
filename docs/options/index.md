@@ -1,9 +1,9 @@
 ## Config
 
-#### componentsPath
+#### componentsDir
 
 - Type: `string`
-- Required: true
+- Default: `null`
 
 The folder in which all the example `.vue` components are stored.  
 Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.  
@@ -23,11 +23,11 @@ It may contain sub-folders for better organization.
   </thead>
   <tbody>
     <tr>
-      <td>file</td>
-      <td>The filepath of the example component <strong>without</strong> the .vue extension</td>
+      <td>component</td>
+      <td>The component name of the example component <strong>without</strong> the .vue extension</td>
       <td>String</td>
       <td><em>Empty</em></td>
-      <td>true</td>
+      <td>false</td>
     </tr>
     <tr>
       <td>title</td>

@@ -1,10 +1,6 @@
 # vuepress-plugin-vue-example
 
-A Vuepress 2 plugin to display Vue components' live examples and source code inside documentation.
-
-::: warning
-This plugin only works using [Vite as the bundler](https://v2.vuepress.vuejs.org/guide/bundler.html) for Vuepress 2.
-:::
+A [Vuepress 2](https://v2.vuepress.vuejs.org/) plugin to display Vue components' live examples and source code inside documentation.
 
 ## Features
 
