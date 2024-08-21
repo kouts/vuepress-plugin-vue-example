@@ -116,9 +116,26 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
-import { loadComponent, loadComponentAsString } from '@temp/loadComponent'
-import { markRaw } from 'vue'
+import beautify from 'js-beautify'
+import lzString from 'lz-string'
 import VueExampleHighlight from './VueExampleHighlight.vue'
+
+const templateReg = /(<\/?)template([\s\S]*?>)/gi
+const vueBeautifyDivReg = /(<\/?)vueBeautifyDiv([\s\S]*?>)/gi
+
+const beautifyVue = (text, options) => {
+  if (!text) {
+    return
+  }
+  text = text.replace(templateReg, function (match, begin, end) {
+    return begin + 'vueBeautifyDiv' + end
+  })
+  text = beautify.html(text, options)
+
+  return text.replace(vueBeautifyDivReg, function (match, begin, end) {
+    return begin + 'template' + end
+  })
+}
 
 export default {
   name: 'SourceView',
@@ -126,7 +143,7 @@ export default {
     VueExampleHighlight,
   },
   props: {
-    file: {
+    component: {
       type: String,
       required: true,
     },
@@ -157,26 +174,46 @@ export default {
   },
   data() {
     return {
-      component: undefined,
       sections: [],
       sectionSelected: 'example',
       expanded: true,
     }
   },
   async created() {
-    await this.createComponent()
     await this.createSections()
     this.expanded = this.startExpanded
   },
   methods: {
-    async createComponent() {
-      const res = await loadComponent(this.$props.file)
-
-      this.component = markRaw(res)
-    },
     async createSections() {
-      const res = await loadComponentAsString(this.$props.file)
-      const contents = res.default
+      let contents = ''
+
+      try {
+        const parsed = JSON.parse(this.$componentsContents)
+
+        contents = lzString.decompressFromBase64(parsed[this.component])
+        contents = beautifyVue(contents, {
+          indent_size: 2,
+          indent_char: ' ',
+          max_preserve_newlines: 1,
+          preserve_newlines: true,
+          keep_array_indentation: false,
+          break_chained_methods: false,
+          indent_scripts: 'normal',
+          brace_style: 'collapse',
+          space_before_conditional: true,
+          unescape_strings: false,
+          jslint_happy: false,
+          end_with_newline: false,
+          indent_inner_html: false,
+          comma_first: false,
+          e4x: false,
+          indent_empty_lines: false,
+          wrap_line_length: '80',
+        })
+      } catch (error) {
+        console.error('Error parsing JSON', error)
+      }
+
       const sections = []
 
       sections.push({ name: 'example', label: 'Example', contents: 'N/A', language: 'N/A' })

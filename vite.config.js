@@ -56,7 +56,16 @@ export default defineConfig(({ mode }) => {
         formats: ['es'],
       },
       rollupOptions: {
-        external: [/^node:/, 'vue', 'vuepress/client', 'vuepress/utils', 'vuepress/shared', /^@temp/],
+        external: [
+          /^node:/,
+          'fs/promises',
+          'vue',
+          'vuepress/client',
+          'vuepress/utils',
+          'vuepress/shared',
+          /^@temp/,
+          '@vuepress/plugin-register-components',
+        ],
         output: {
           assetFileNames: 'assets/[name][extname]',
           entryFileNames: '[name].js',

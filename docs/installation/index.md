@@ -1,9 +1,9 @@
 ## Installation
 
-Install `vuepress-plugin-vue-example@next` and `prismjs` via npm.
+Install `vuepress-plugin-vue-example@next` and its peer dependencies via npm.
 
 ```bash
-npm install -D vuepress-plugin-vue-example@next prismjs
+npm install -D vuepress-plugin-vue-example@next prismjs @vuepress/plugin-register-components
 ```
 
 ## Usage
@@ -27,11 +27,14 @@ export default defineUserConfig({
     },
   }),
   plugins: [
+    // Provide a directory where all the example `.vue` files will be stored.
+    // Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.
+    // Sub-directories can be utilized to separate examples into categories.
+    registerComponentsPlugin({
+      componentsDir: '../components/',
+    }),
     vueExamplePlugin({
-      // Provide a directory where all the example `.vue` files will be stored.
-      // Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.
-      // Sub-directories can be utilized to separate examples into categories.
-      componentsPath: '../components/',
+      componentsDir: '../components/',
     }),
   ],
 })
@@ -44,7 +47,7 @@ export default defineUserConfig({
 import 'vuepress-plugin-vue-example/style.css'
 ```
 
-### Use the vue-example component
+### Use the VueExample component
 
 This plugin provides an automatically registered Vue component that you can use inside in your `.md` or `.vue` files.
 
@@ -57,7 +60,7 @@ This plugin provides an automatically registered Vue component that you can use 
 your content
 ...
 
-<vue-example file="example" />
+<VueExample component="Example" />
 ```
 
 #### Inside `.vue` files
@@ -66,6 +69,6 @@ your content
 // .vue file
 
 <template>
-  <vue-example file="example" />
+  <VueExample component="Example" />
 </template>
 ```
