@@ -8,7 +8,7 @@ const createEntries = () => {
   const entries = new Map()
   const excludeFiles = []
 
-  for (const file of glob.sync('src/**/*.js')) {
+  for (const file of glob.sync('src/**/*.{js,vue}')) {
     const fileName = file.split('/').at(-1)?.split('.')[0]
 
     if (excludeFiles.some((excludeFile) => file.endsWith(excludeFile))) {
