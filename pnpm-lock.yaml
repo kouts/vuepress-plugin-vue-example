@@ -54,9 +54,6 @@ importers:
       husky:
         specifier: ^9.1.4
         version: 9.1.5
-      js-beautify:
-        specifier: ^1.15.1
-        version: 1.15.1
       jsdom:
         specifier: ^24.1.1
         version: 24.1.1
