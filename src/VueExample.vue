@@ -116,8 +116,26 @@
 
 <script>
 // SVG icons from // https://tablericons.com/
+import beautify from 'js-beautify'
 import lzString from 'lz-string'
 import VueExampleHighlight from './VueExampleHighlight.vue'
+
+const templateReg = /(<\/?)template([\s\S]*?>)/gi
+const vueBeautifyDivReg = /(<\/?)vueBeautifyDiv([\s\S]*?>)/gi
+
+const beautifyVue = (text, options) => {
+  if (!text) {
+    return
+  }
+  text = text.replace(templateReg, function (match, begin, end) {
+    return begin + 'vueBeautifyDiv' + end
+  })
+  text = beautify.html(text, options)
+
+  return text.replace(vueBeautifyDivReg, function (match, begin, end) {
+    return begin + 'template' + end
+  })
+}
 
 export default {
   name: 'SourceView',
@@ -173,6 +191,25 @@ export default {
         const parsed = JSON.parse(this.$componentsContents)
 
         contents = lzString.decompressFromBase64(parsed[this.component])
+        contents = beautifyVue(contents, {
+          indent_size: 2,
+          indent_char: ' ',
+          max_preserve_newlines: 1,
+          preserve_newlines: true,
+          keep_array_indentation: false,
+          break_chained_methods: false,
+          indent_scripts: 'normal',
+          brace_style: 'collapse',
+          space_before_conditional: true,
+          unescape_strings: false,
+          jslint_happy: false,
+          end_with_newline: false,
+          indent_inner_html: false,
+          comma_first: false,
+          e4x: false,
+          indent_empty_lines: false,
+          wrap_line_length: '80',
+        })
       } catch (error) {
         console.error('Error parsing JSON', error)
       }

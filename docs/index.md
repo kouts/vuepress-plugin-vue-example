@@ -8,7 +8,7 @@ This plugin only works using [Vite as the bundler](https://v2.vuepress.vuejs.org
 
 ## Features
 
-- Easy to use, with just a single `vue-example` tag inside `.md` or `.vue` files
+- Easy to use, with just a single `VueExample` tag inside `.md` or `.vue` files
 - Uses `prismjs` for syntax highlighting
 - Displays a fully-working live example
 - Splits source code in separate sections for `template` `script` and `style`
