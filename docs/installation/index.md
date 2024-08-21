@@ -17,6 +17,9 @@ Check out the official Vuepress documentation for [Using a Plugin](https://vuepr
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { vueExamplePlugin } from 'vuepress-plugin-vue-example'
+import { fileURLToPath } from 'url'
+
+const examplesDir = fileURLToPath(new URL('./components', import.meta.url))
 
 export default defineUserConfig({
   theme: defaultTheme({
@@ -28,13 +31,13 @@ export default defineUserConfig({
   }),
   plugins: [
     // Provide a directory where all the example `.vue` files will be stored.
-    // Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.
+    // Either an absolute path or a relative path to the `.vuepress` directory can be used.
     // Sub-directories can be utilized to separate examples into categories.
     registerComponentsPlugin({
-      componentsDir: '../components/',
+      componentsDir: examplesDir,
     }),
     vueExamplePlugin({
-      componentsDir: '../components/',
+      componentsDir: examplesDir,
     }),
   ],
 })

@@ -6,7 +6,7 @@
 - Default: `null`
 
 The folder in which all the example `.vue` components are stored.  
-Either an absolute path or a relative path to the `.vuepress/.temp` directory can be used.  
+Either an absolute path or a relative path to the `.vuepress` directory can be used.  
 It may contain sub-folders for better organization.
 
 ## Props
