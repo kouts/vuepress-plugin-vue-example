@@ -1,9 +1,9 @@
 ## Installation
 
-Install `vuepress-plugin-vue-example@next` and its peer dependencies via npm.
+Install `vuepress-plugin-vue-example@next` and its peer dependencies via `npm` or your preferred package manager.
 
 ```bash
-npm install -D vuepress-plugin-vue-example@next prismjs @vuepress/plugin-register-components
+npm install -D vuepress-plugin-vue-example@next @vuepress/plugin-register-components@next prismjs
 ```
 
 ## Usage
