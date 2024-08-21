@@ -1,28 +1,48 @@
 import { mount } from '@vue/test-utils'
+import lzString from 'lz-string'
+import { resolve } from 'path'
+import { expect } from 'vitest'
+import { readFileAsString } from '@/prepareClientConfig'
 import VueExample from '@/VueExample.vue'
 import { waitNT, waitRAF } from '../utils'
-import { loadComponentAsString } from './__mocks__/temp/loadComponent'
 
 const countLines = (str) => str.split(/\r\n|\r|\n/).length
 
-const props = {
-  file: 'test-component.vue',
+const getTestComponentContents = async () => {
+  const testComponentContents = await readFileAsString(resolve(__dirname, '__mocks__/test-component.vue'))
+
+  return testComponentContents
 }
 
-let wrapper
+const getCompressedTestComponentContents = async () => {
+  const testComponentContents = await getTestComponentContents()
+  const compressedTestComponentContents = lzString.compressToBase64(testComponentContents)
 
-beforeEach(async () => {
-  wrapper = mount(VueExample, {
-    props,
+  return compressedTestComponentContents
+}
+
+const createWrapper = async (props) => {
+  const compressedTestComponentContents = await getCompressedTestComponentContents()
+
+  return mount(VueExample, {
+    props: {
+      component: 'TestComponent',
+      ...props,
+    },
+    global: {
+      mocks: {
+        $componentsContents: JSON.stringify({
+          TestComponent: compressedTestComponentContents,
+        }),
+      },
+    },
   })
-})
-
-afterEach(() => {
-  wrapper.unmount()
-})
+}
 
 describe('VueExample', () => {
   it('renders correctly', async () => {
+    const wrapper = await createWrapper()
+
     await waitNT(wrapper.vm)
     await waitRAF()
     const div = wrapper.find('div.card')
@@ -32,9 +52,10 @@ describe('VueExample', () => {
   })
 
   it('parses the template SFC sections', async () => {
-    const contents = await loadComponentAsString()
+    const wrapper = await createWrapper()
+    const contents = await getTestComponentContents()
 
-    const parsed = wrapper.vm.parseSfcSection('template', contents.default)
+    const parsed = wrapper.vm.parseSfcSection('template', contents)
 
     expect(countLines(parsed)).toBe(5)
     expect(parsed).toContain('<template>')
@@ -46,9 +67,10 @@ describe('VueExample', () => {
   })
 
   it('parses the script SFC sections', async () => {
-    const contents = await loadComponentAsString()
+    const wrapper = await createWrapper()
+    const contents = await getTestComponentContents()
 
-    const parsed = wrapper.vm.parseSfcSection('script', contents.default)
+    const parsed = wrapper.vm.parseSfcSection('script', contents)
 
     expect(countLines(parsed)).toBe(17)
     expect(parsed).toContain('<script>')
@@ -60,9 +82,10 @@ describe('VueExample', () => {
   })
 
   it('parses the style SFC sections', async () => {
-    const contents = await loadComponentAsString()
+    const wrapper = await createWrapper()
+    const contents = await getTestComponentContents()
 
-    const parsed = wrapper.vm.parseSfcSection('style', contents.default)
+    const parsed = wrapper.vm.parseSfcSection('style', contents)
 
     expect(countLines(parsed)).toBe(13)
     expect(parsed).toContain('<style')
@@ -73,54 +96,66 @@ describe('VueExample', () => {
     expect(parsed).not.toContain('</script>')
   })
 
-  it('removes comments from the template section', () => {
+  it('removes comments from the template section', async () => {
+    const wrapper = await createWrapper()
     const str = `
-    <template>
-      <!-- This is a comment -->
-      <p>Text</p>
-    </template>
-    `
+      <template>
+        <!-- This is a comment -->
+        <p>Text</p>
+      </template>
+      `
     const removed = wrapper.vm.removeComments('template', str)
 
     expect(removed).not.toContain('<!-- This is a comment -->')
   })
 
-  it('removes comments from the script section', () => {
+  it('removes comments from the script section', async () => {
+    const wrapper = await createWrapper()
     const str = `
-    <script>
-      // This is a comment
-      /* This is a comment */
-      const test = () => 'test';
-    </script>
-    `
+      <script>
+        // This is a comment
+        /* This is a comment */
+        const test = () => 'test';
+      </script>
+      `
     const removed = wrapper.vm.removeComments('script', str)
 
     expect(removed).not.toContain('// This is a comment')
   })
 
-  it('removes comments from the style section', () => {
+  it('removes comments from the style section', async () => {
+    const wrapper = await createWrapper()
     const str = `
-    <style>
-      /* This is a comment */
-      .btn-primary {
-        display: inline-block;
-      }
-    </style>
-    `
+      <style>
+        /* This is a comment */
+        .btn-primary {
+          display: inline-block;
+        }
+      </style>
+      `
     const removed = wrapper.vm.removeComments('script', str)
 
     expect(removed).not.toContain('// This is a comment')
   })
 
   it('renders the example component section', async () => {
+    const wrapper = await createWrapper()
+
     await waitNT(wrapper.vm)
     await waitRAF()
-    const p = wrapper.find('p.demo')
 
-    expect(p.exists()).toBe(true)
+    const cardBody = wrapper.find('.card-body')
+    const exampleComponent = wrapper.find('testcomponent')
+    const { data, ...attrsWithoutData } = exampleComponent.attributes()
+
+    expect(cardBody.exists()).toBe(true)
+    expect(exampleComponent.exists()).toBe(true)
+    expect(exampleComponent.attributes()).toEqual(attrsWithoutData)
   })
 
   it('renders the template section', async () => {
+    const wrapper = await createWrapper()
+
     wrapper.setData({ sectionSelected: 'template' })
     await waitNT(wrapper.vm)
     await waitRAF()
@@ -131,6 +166,8 @@ describe('VueExample', () => {
   })
 
   it('renders the script section', async () => {
+    const wrapper = await createWrapper()
+
     wrapper.setData({ sectionSelected: 'script' })
     await waitNT(wrapper.vm)
     await waitRAF()
@@ -141,6 +178,8 @@ describe('VueExample', () => {
   })
 
   it('renders the style section', async () => {
+    const wrapper = await createWrapper()
+
     wrapper.setData({ sectionSelected: 'style' })
     await waitNT(wrapper.vm)
     await waitRAF()
@@ -151,6 +190,7 @@ describe('VueExample', () => {
   })
 
   it('renders the title of the example section', async () => {
+    const wrapper = await createWrapper()
     const title = 'My custom example title'
 
     wrapper.setProps({ title })
@@ -163,6 +203,8 @@ describe('VueExample', () => {
   })
 
   it('hides the labels', async () => {
+    const wrapper = await createWrapper()
+
     wrapper.setProps({ showLabels: false })
     await waitNT(wrapper.vm)
     await waitRAF()
@@ -176,6 +218,8 @@ describe('VueExample', () => {
   })
 
   it('hides the icons', async () => {
+    const wrapper = await createWrapper()
+
     wrapper.setProps({ showIcons: false })
     await waitNT(wrapper.vm)
     await waitRAF()
@@ -185,23 +229,19 @@ describe('VueExample', () => {
   })
 
   it('shows a loader', async () => {
-    const wrapperWithLoader = mount(VueExample, {
-      propsData: {
-        ...props,
-        showLoader: true,
-      },
+    const wrapperWithLoader = await createWrapper({
+      component: null,
+      showLoader: true,
     })
+
     const loader = wrapperWithLoader.find('div.loader')
 
     expect(loader.exists()).toBe(true)
   })
 
   it("shows comments inside sections' contents", async () => {
-    const wrapperWithComments = mount(VueExample, {
-      propsData: {
-        ...props,
-        stripComments: false,
-      },
+    const wrapperWithComments = await createWrapper({
+      stripComments: false,
     })
 
     // Comments in template
@@ -211,31 +251,42 @@ describe('VueExample', () => {
     let pre = wrapperWithComments.find('pre.language-markup')
 
     expect(pre.text()).toContain('This is a test comment inside the template part')
+
     // Comments in script
     wrapperWithComments.setData({ sectionSelected: 'script' })
     await waitNT(wrapperWithComments.vm)
     await waitRAF()
     pre = wrapperWithComments.find('pre.language-javascript')
+
     expect(pre.text()).toContain('This is a test comment inside the script part')
+
     // Comments in style
     wrapperWithComments.setData({ sectionSelected: 'style' })
     await waitNT(wrapperWithComments.vm)
     await waitRAF()
     pre = wrapperWithComments.find('pre.language-css')
+
     expect(pre.text()).toContain('This is a test comment inside the style part')
   })
 
   it('hides the main section when the startExpanded props is false', async () => {
-    wrapper.setProps({ startExpanded: false })
+    const wrapper = await createWrapper({
+      startExpanded: false,
+    })
+
     await waitNT(wrapper.vm)
     await waitRAF()
+
     const cardBody = wrapper.find('div.card-body')
 
     expect(cardBody.attributes().style).toBe('display: none;')
   })
 
   it('shows the main section when the startExpanded props is true', async () => {
-    wrapper.setProps({ startExpanded: true })
+    const wrapper = await createWrapper({
+      startExpanded: true,
+    })
+
     await waitNT(wrapper.vm)
     await waitRAF()
     const cardBody = wrapper.find('div.card-body')

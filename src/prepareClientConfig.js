@@ -3,11 +3,9 @@ import { readFile } from 'fs/promises'
 import lzString from 'lz-string'
 import { getDirname } from 'vuepress/utils'
 
-const readFileAsString = async (filePath) => {
+export const readFileAsString = async (filePath) => {
   try {
-    let fileContent = await readFile(filePath, 'utf-8')
-
-    fileContent = fileContent.replace(/(\r\n|\n|\r)/gm, '')
+    const fileContent = await readFile(filePath, 'utf-8')
 
     return fileContent
   } catch (error) {
