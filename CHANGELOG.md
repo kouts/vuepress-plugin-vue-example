@@ -1,3 +1,10 @@
+## [3.0.17](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.16...v3.0.17) (2024-08-22)
+
+
+### Bug Fixes
+
+* fixed environment detection ([e051f9e](https://github.com/kouts/vuepress-plugin-vue-example/commit/e051f9e27bc6cafd28d0a513a2c55ebe9a2f7912))
+
 ## [3.0.16](https://github.com/kouts/vuepress-plugin-vue-example/compare/v3.0.15...v3.0.16) (2024-08-21)
 
 
