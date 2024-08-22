@@ -1,3 +1,12 @@
+## [1.1.9](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.8...v1.1.9) (2024-08-22)
+
+
+### Bug Fixes
+
+* specified semantic-release version ([9248958](https://github.com/kouts/vuepress-plugin-vue-example/commit/92489584a046f9f617899355ce434506cc784a40))
+* updated node to v18 and npm packages ([5ce6520](https://github.com/kouts/vuepress-plugin-vue-example/commit/5ce6520a99eb65de9e9c14c7e98422c3b43a0e97))
+* updated release action ([507e1e3](https://github.com/kouts/vuepress-plugin-vue-example/commit/507e1e3ae534bb82df81eeed78eab739fa7be1f4))
+
 ## [1.1.8](https://github.com/kouts/vuepress-plugin-vue-example/compare/v1.1.7...v1.1.8) (2022-12-04)
 
 
