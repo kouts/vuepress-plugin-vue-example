@@ -16,8 +16,7 @@ export const readFileAsString = async (filePath) => {
 
 export const prepareClientConfigFile = async (app, options) => {
   const __dirname = getDirname(import.meta.url)
-  const isDev = import.meta.env.DEV
-
+  const isDev = process.env.IS_LOCAL_DEV && process.env.IS_LOCAL_DEV === 'true'
   const componentsFromDir = await getComponentsFromDir(options)
 
   // Create a map of component names and their contents

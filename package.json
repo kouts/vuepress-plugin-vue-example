@@ -26,10 +26,10 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vuepress dev docs",
+    "docs:dev": "IS_LOCAL_DEV=true vuepress dev docs",
+    "docs:build": "IS_LOCAL_DEV=true vuepress build docs",
+    "docs:preview": "npx serve -s public",
     "build": "vite build",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
     "test:unit": "vitest",
     "lint": "eslint \"**/*.{vue,ts,js,cjs}\"",
     "lint-fix": "eslint --fix \"**/*.{vue,ts,js,cjs}\"",

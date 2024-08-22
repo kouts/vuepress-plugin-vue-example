@@ -120,7 +120,7 @@ import lzString from 'lz-string'
 import VueExampleHighlight from './VueExampleHighlight.vue'
 
 export default {
-  name: 'SourceView',
+  name: 'VueExample',
   components: {
     VueExampleHighlight,
   },
